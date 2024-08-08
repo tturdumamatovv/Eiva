@@ -43,9 +43,12 @@ class Advantages(SingletonModel):
 class MainPage(SingletonModel):
     our_services_title = models.CharField(max_length=255, verbose_name="Наши услуги")
     our_specialists_title = models.CharField(max_length=255, verbose_name="Наши специалисты")
+    about_us_title = models.CharField(max_length=255, verbose_name="О нас")
+    about_us_description = models.TextField(verbose_name="О нас")
     counter_title = models.CharField(max_length=255, verbose_name="Заголовок счетчика")
     counter_sub_title = models.CharField(max_length=255, verbose_name="Подзаголовок счетчика")
     birth_counter = models.IntegerField(default=0, verbose_name="Количество родившихся")
+    birth_counter_sub_title = models.CharField(max_length=255, verbose_name="Подзаголовок Количество родившихся")
     boys_counter = models.IntegerField(default=0, verbose_name="Количество мальчиков")
     girls_counter = models.IntegerField(default=0, verbose_name="Количество девочек")
 

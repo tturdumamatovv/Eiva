@@ -6,6 +6,8 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название категории')
+    title = models.CharField(max_length=100, blank=True, null=True, verbose_name='Заголовок')
+    description = models.TextField(blank=True, null=True, verbose_name='Описание')
 
     def __str__(self):
         return self.name
@@ -17,7 +19,8 @@ class Category(models.Model):
 
 class Type(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Тип сервиса')
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name='Название типа')
+    subtitle = models.CharField(max_length=100, blank=True, null=True, verbose_name='Подзаголовок')
 
     def __str__(self):
         return self.name

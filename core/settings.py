@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.prices.apps.PricesConfig',
     'apps.doctors.apps.DoctorsConfig',
     'apps.pages.apps.PagesConfig',
+    'apps.services.apps.ServicesConfig',
 ]
 
 MIDDLEWARE = [
