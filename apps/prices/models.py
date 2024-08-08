@@ -1,7 +1,19 @@
 from django.db import models
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Название категории')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+
+
 class Service(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', blank=True, null=True)
     name = models.CharField(max_length=255, verbose_name='Название услуги')
     description = models.TextField(verbose_name='Описание')
     price = models.IntegerField(verbose_name='Цена')

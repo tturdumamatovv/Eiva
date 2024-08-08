@@ -26,13 +26,13 @@ class WelcomePage(SingletonModel):
 
     class Meta:
         verbose_name = "Welcome Page"
-        verbose_name_plural = "Welcome Pages"
+        verbose_name_plural = "Welcome Page"
 
 
 class Advantages(SingletonModel):
     page = models.ForeignKey(WelcomePage, on_delete=models.CASCADE, verbose_name="Страница", blank=True, null=True,
                              related_name='advantages')
-    icon = models.CharField(max_length=255, verbose_name="Иконка", blank=True, null=True)
+    icon = models.FileField(upload_to="advantages", verbose_name="Иконка", blank=True, null=True)
     text = models.CharField(max_length=255, verbose_name="Текст", blank=True, null=True)
 
     class Meta:
@@ -54,7 +54,7 @@ class MainPage(SingletonModel):
 
     class Meta:
         verbose_name = "Главная страница"
-        verbose_name_plural = "Главные страницы"
+        verbose_name_plural = "Главные страница"
 
 
 class AboutPage(SingletonModel):
