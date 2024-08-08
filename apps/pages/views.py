@@ -3,8 +3,8 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import WelcomePage, MainPage, AboutPage
-from .serializers import WelcomePageSerializer, MainPageSerializer, AboutPageSerializer
+from .models import WelcomePage, MainPage, AboutPage, ContactInformation
+from .serializers import WelcomePageSerializer, MainPageSerializer, AboutPageSerializer, ContactInformationSerializer
 
 
 # Create your views here.
@@ -70,4 +70,12 @@ class AboutPageAPIView(APIView):
                 gallery_title='Галерея',
             )
         serializer = AboutPageSerializer(about_page)
+        return Response(serializer.data)
+
+class ContactInformationView(APIView):
+    def get(self, request, *args, **kwargs):
+        contact_info = ContactInformation.objects.first()
+        if not contact_info:
+            return Response({'error': 'Контактная информация не найдена'}, status=404)
+        serializer = ContactInformationSerializer(contact_info)
         return Response(serializer.data)

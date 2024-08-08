@@ -78,7 +78,7 @@ class AboutPage(SingletonModel):
 
 
 class AboutCard(SingletonModel):
-    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница")
+    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='cards')
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     description = models.TextField(verbose_name="Описание")
     image = models.ImageField(upload_to="about", verbose_name="Изображение")
@@ -89,7 +89,7 @@ class AboutCard(SingletonModel):
 
 
 class AboutFAQ(SingletonModel):
-    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница")
+    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='faqs')
     question = models.CharField(max_length=255, verbose_name="Вопрос")
     answer = models.TextField(verbose_name="Ответ")
 
@@ -99,7 +99,7 @@ class AboutFAQ(SingletonModel):
 
 
 class AboutFAQImage(SingletonModel):
-    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница")
+    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='faq_images')
     image = models.ImageField(upload_to="about", verbose_name="Изображение")
     link = models.CharField(max_length=255, verbose_name="Ссылка")
 
@@ -109,7 +109,7 @@ class AboutFAQImage(SingletonModel):
 
 
 class AboutPartners(SingletonModel):
-    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница")
+    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='partners')
     image = models.ImageField(upload_to="about/partners", verbose_name="Изображение")
 
     class Meta:
@@ -118,7 +118,7 @@ class AboutPartners(SingletonModel):
 
 
 class AboutGallery(SingletonModel):
-    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница")
+    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='gallery')
     name = models.CharField(max_length=255, verbose_name="Имя")
     image = models.ImageField(upload_to="about/gallery", verbose_name="Изображение")
 
@@ -127,17 +127,58 @@ class AboutGallery(SingletonModel):
         verbose_name_plural = "Изображения галереи"
 
 
-class ServicesPage(SingletonModel):
-    pass
+class ContactInformation(SingletonModel):
+    address = models.TextField(verbose_name="Адрес")
+    working_hours_weekdays = models.CharField(max_length=50, verbose_name="Часы работы в будни")
+    working_hours_weekend = models.CharField(max_length=50, verbose_name="Часы работы в выходные", blank=True,
+                                             null=True)
+    email = models.EmailField(verbose_name="Электронная почта")
+    iframe_map = models.TextField(verbose_name="Код карты", help_text="HTML iframe для встраивания карты")
+
+    def __str__(self):
+        return self.address
+
+    class Meta:
+        verbose_name = "Контактная информация"
+        verbose_name_plural = "Контактные информации"
 
 
-class DoctorsPage(SingletonModel):
-    pass
+class PhoneNumber(models.Model):
+    number = models.CharField(max_length=20, verbose_name="Номер телефона")
+    contact_information = models.ForeignKey('ContactInformation', on_delete=models.CASCADE,
+                                            related_name='phone_numbers', verbose_name="Контактная информация")
+
+    def __str__(self):
+        return f"{self.number}"
+
+    class Meta:
+        verbose_name = "Телефонный номер"
+        verbose_name_plural = "Телефонные номера"
 
 
-class PricesPage(SingletonModel):
-    pass
+class SocialNetwork(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Название социальной сети")
+    url = models.URLField(verbose_name="URL")
+    icon = models.FileField(upload_to="social_networks", verbose_name="Иконка", blank=True, null=True)
+    contact_information = models.ForeignKey('ContactInformation', on_delete=models.CASCADE,
+                                            related_name='social_networks', verbose_name="Контактная информация")
+
+    def __str__(self):
+        return f"{self.name}: {self.url}"
+
+    class Meta:
+        verbose_name = "Социальная сеть"
+        verbose_name_plural = "Социальные сети"
 
 
-class ContactsPage(SingletonModel):
-    pass
+class Email(models.Model):
+    email = models.EmailField(verbose_name="Электронная почта")
+    contact_information = models.ForeignKey('ContactInformation', on_delete=models.CASCADE,
+                                            related_name='emails', verbose_name="Контактная информация")
+
+    def __str__(self):
+        return f"{self.email}"
+
+    class Meta:
+        verbose_name = "Электронная почта"
+        verbose_name_plural = "Электронные почты"
