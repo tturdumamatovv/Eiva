@@ -20,6 +20,7 @@ class Category(models.Model):
 class Type(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Тип сервиса')
     name = models.CharField(max_length=100, verbose_name='Название типа')
+    title = models.CharField(max_length=100, blank=True, null=True, verbose_name='Заголовок')
     subtitle = models.CharField(max_length=100, blank=True, null=True, verbose_name='Подзаголовок')
 
     def __str__(self):

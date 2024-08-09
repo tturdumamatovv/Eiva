@@ -21,12 +21,18 @@ class TypeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Type
-        fields = ('name', 'services')
+        fields = ('title', 'subtitle', 'services')
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    types = TypeSerializer(many=True, source='type_set')  # используем related_name если он установлен
+    types = TypeSerializer(many=True, source='type_set')
 
     class Meta:
         model = Category
         fields = ('name', 'types')
+
+
+class CategoryListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ('id', 'name', )

@@ -182,3 +182,17 @@ class Email(models.Model):
     class Meta:
         verbose_name = "Электронная почта"
         verbose_name_plural = "Электронные почты"
+
+
+class Documents(SingletonModel):
+    rules = models.TextField(verbose_name="Правила")
+    rules_document = models.FileField(upload_to="rules", verbose_name="Договор", blank=True, null=True)
+    contract = models.TextField(verbose_name="Договор")
+    contract_document = models.FileField(upload_to="rules", verbose_name="Договор", blank=True, null=True)
+
+    def __str__(self):
+        return self.rules
+
+    class Meta:
+        verbose_name = "Правила"
+        verbose_name_plural = "Правила"
