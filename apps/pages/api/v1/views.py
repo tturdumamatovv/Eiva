@@ -1,9 +1,7 @@
-from django.shortcuts import render
-from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import WelcomePage, MainPage, AboutPage, ContactInformation
+from apps.pages.models import WelcomePage, MainPage, AboutPage, ContactInformation
 from .serializers import WelcomePageSerializer, MainPageSerializer, AboutPageSerializer, ContactInformationSerializer
 
 

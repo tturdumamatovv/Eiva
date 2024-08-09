@@ -1,12 +1,12 @@
 from rest_framework import serializers
 
-from .models import WelcomePage, Advantages, MainPage, AboutPage, ContactInformation, SocialNetwork, Email, PhoneNumber, \
-    AboutCard, AboutFAQ, AboutFAQImage, AboutPartners, AboutGallery
-
+from apps.doctors.models import Doctor
+from apps.doctors.serializers import DoctorListSerializer
+from apps.pages.models import WelcomePage, Advantages, MainPage, AboutPage, ContactInformation, SocialNetwork, Email, \
+    PhoneNumber, \
+    AboutCard, AboutFAQ, AboutFAQImage, AboutPartners, AboutGallery, AboutImages
 from apps.prices.models import Category as PriceCategory
 from apps.prices.serializers import CategorySerializer as PriceCategorySerializer
-from ..doctors.models import Doctor
-from ..doctors.serializers import DoctorListSerializer
 
 
 class AdvantagesSerializer(serializers.ModelSerializer):
@@ -75,6 +75,10 @@ class AboutPartnersSerializer(serializers.ModelSerializer):
         model = AboutPartners
         fields = '__all__'
 
+class AboutImagesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AboutImages
+        fields = '__all__'
 
 class AboutGallerySerializer(serializers.ModelSerializer):
     class Meta:
@@ -87,6 +91,7 @@ class AboutPageSerializer(serializers.ModelSerializer):
     faqs = serializers.SerializerMethodField()
     faq_images = serializers.SerializerMethodField()
     partners = serializers.SerializerMethodField()
+    images = serializers.SerializerMethodField()
     gallery = serializers.SerializerMethodField()
 
     class Meta:
@@ -127,6 +132,10 @@ class AboutPageSerializer(serializers.ModelSerializer):
     def get_partners(self, obj):
         partners = AboutPartners.objects.all()
         return AboutPartnersSerializer(partners, many=True).data
+
+    def get_images(self, obj):
+        images = AboutImages.objects.all()
+        return AboutImagesSerializer(images, many=True).data
 
     def get_gallery(self, obj):
         gallery = AboutGallery.objects.all()

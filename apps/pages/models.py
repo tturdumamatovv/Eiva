@@ -117,6 +117,11 @@ class AboutPartners(SingletonModel):
         verbose_name_plural = "Партнеры"
 
 
+class AboutImages(models.Model):
+    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='images')
+    image = models.ImageField(upload_to="about-images", verbose_name="Изображение")
+
+
 class AboutGallery(SingletonModel):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='gallery')
     name = models.CharField(max_length=255, verbose_name="Имя")
