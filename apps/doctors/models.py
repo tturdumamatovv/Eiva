@@ -23,6 +23,7 @@ class Doctor(models.Model):
                                  verbose_name='Должность')
     specialization = models.ForeignKey(Specialization, on_delete=models.SET_NULL, null=True, related_name='doctors',
                                        verbose_name='Спецификация')
+    photo = models.FileField(upload_to='doctors', verbose_name='Фото', blank=True, null=True)
     seniority = models.CharField(max_length=255, verbose_name='Стаж')
     description = models.TextField(null=True, verbose_name='Описание')
 

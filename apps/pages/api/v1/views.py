@@ -41,10 +41,10 @@ class MainPageAPIView(APIView):
                 boys_counter='500',
                 girls_counter='500',
             )
-            serializer = MainPageSerializer(welcome)
+            serializer = MainPageSerializer(welcome, context={'request': request})
             return Response(serializer.data)
 
-        serializer = MainPageSerializer(welcome)
+        serializer = MainPageSerializer(welcome, context={'request': request})
         return Response(serializer.data)
 
 
@@ -67,13 +67,14 @@ class AboutPageAPIView(APIView):
                 partners_title='Наши партнеры',
                 gallery_title='Галерея',
             )
-        serializer = AboutPageSerializer(about_page)
+        serializer = AboutPageSerializer(about_page, context={'request': request})
         return Response(serializer.data)
+
 
 class ContactInformationView(APIView):
     def get(self, request, *args, **kwargs):
         contact_info = ContactInformation.objects.first()
         if not contact_info:
             return Response({'error': 'Контактная информация не найдена'}, status=404)
-        serializer = ContactInformationSerializer(contact_info)
+        serializer = ContactInformationSerializer(contact_info, context={'request': request})
         return Response(serializer.data)

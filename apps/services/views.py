@@ -8,7 +8,7 @@ class CategoryListAPIView(APIView):
     def get(self, request, *args, **kwargs):
         categories = Category.objects.all()
 
-        serializer = CategoryListSerializer(categories, many=True)
+        serializer = CategoryListSerializer(categories, many=True, context={'request': self.request})
         return Response(serializer.data)
 
 
@@ -17,4 +17,4 @@ class CategoryAPIView(APIView):
         categories = Category.objects.get(id=self.kwargs['pk'])
 
         serializer = CategorySerializer(categories, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data, context={'request': self.request})

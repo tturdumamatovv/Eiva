@@ -7,19 +7,19 @@ from .serializers import ServiceSerializer, PackageSerializer, CategorySerialize
 class CategoryListView(APIView):
     def get(self, request, *args, **kwargs):
         categories = Category.objects.all()
-        serializer = CategorySerializer(categories, many=True)
+        serializer = CategorySerializer(categories, many=True, context={'request': self.request})
         return Response(serializer.data)
 
 
 class ServiceListView(APIView):
     def get(self, request, *args, **kwargs):
         services = Service.objects.filter(category=self.kwargs['category_id'])
-        serializer = ServiceSerializer(services, many=True)
+        serializer = ServiceSerializer(services, many=True, context={'request': self.request})
         return Response(serializer.data)
 
 
 class PackageListView(APIView):
     def get(self, request, *args, **kwargs):
         packages = Package.objects.prefetch_related('services').all()
-        serializer = PackageSerializer(packages, many=True)
+        serializer = PackageSerializer(packages, many=True, context={'request': self.request})
         return Response(serializer.data)
