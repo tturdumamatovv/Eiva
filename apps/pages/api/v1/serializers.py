@@ -33,6 +33,7 @@ class MainPageSerializer(serializers.ModelSerializer):
             'our_services_title',
             'our_services',
             'our_specialists_title',
+            'our_specialists',
             'about_us_title',
             'about_us_description',
             'counter_title',
@@ -43,11 +44,11 @@ class MainPageSerializer(serializers.ModelSerializer):
             'girls_counter',
         ]
 
-    def get_our_services(self):
+    def get_our_services(self, obj):
         obj = PriceCategory.objects.all()
         return PriceCategorySerializer(obj, many=True).data
 
-    def ger_our_specialists(self):
+    def get_our_specialists(self, obj):
         obj = Doctor.objects.all()
         return DoctorListSerializer(obj, many=True).data
 
@@ -115,6 +116,7 @@ class AboutPageSerializer(serializers.ModelSerializer):
             'partners',
             'gallery_title',
             'gallery',
+            'images',
         ]
 
     def get_cards(self, obj):

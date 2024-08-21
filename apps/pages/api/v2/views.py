@@ -35,14 +35,14 @@ class MainPageAboutUsAPIView(APIView):
 
 
 class MainPageBirthCounterAPIView(APIView):
-    def get(self):
+    def get(self, obj):
         obj = MainPage.objects.first()
         serializer = MainPageBirthCounterSerializer(obj)
         return Response(serializer.data)
 
 
 class MainPageContactsAPIView(APIView):
-    def get(self):
+    def get(self, obj):
         # MainPageContactsSerializer
         pass
 

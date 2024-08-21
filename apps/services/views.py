@@ -6,13 +6,15 @@ from .serializers import CategorySerializer, CategoryListSerializer
 
 class CategoryListAPIView(APIView):
     def get(self, request, *args, **kwargs):
-        categories = Category.objects.get(id=self.kwargs['pk'])
+        categories = Category.objects.all()
+
         serializer = CategoryListSerializer(categories, many=True)
         return Response(serializer.data)
 
 
 class CategoryAPIView(APIView):
     def get(self, request, *args, **kwargs):
-        categories = Category.objects.all()
+        categories = Category.objects.get(id=self.kwargs['pk'])
+
         serializer = CategorySerializer(categories, many=True)
         return Response(serializer.data)

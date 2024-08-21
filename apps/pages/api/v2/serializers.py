@@ -104,7 +104,7 @@ class AboutPageFAQSerializer(serializers.ModelSerializer):
 
 
 class AboutPageParentsSerializer(serializers.ModelSerializer):
-    parnters = serializers.SerializerMethodField()
+    partners = serializers.SerializerMethodField()
     images = serializers.SerializerMethodField()
 
     def get_partners(self, obj):
@@ -118,8 +118,8 @@ class AboutPageParentsSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutPage
         fields = [
-            'parents_title',
-            'parents',
+            'partners_title',
+            'partners',
             'images',
         ]
 
