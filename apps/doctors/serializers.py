@@ -21,8 +21,13 @@ class PhotoSerializer(serializers.ModelSerializer):
 
 
 class DoctorListSerializer(serializers.ModelSerializer):
-    position = serializers.StringRelatedField()
-    specialization = serializers.StringRelatedField()
+    position = serializers.SerializerMethodField()
+    specialization = serializers.SerializerMethodField()
+
+    def get_position(self, obj):
+        return obj.position.name
+    def get_specialization(self, obj):
+        return obj.specialization.name
 
     class Meta:
         model = Doctor
