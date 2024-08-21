@@ -77,7 +77,7 @@ class AboutPage(SingletonModel):
         verbose_name_plural = "О нас"
 
 
-class AboutCard(SingletonModel):
+class AboutCard(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='cards')
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     description = models.TextField(verbose_name="Описание")
@@ -189,7 +189,7 @@ class Email(models.Model):
         verbose_name_plural = "Электронные почты"
 
 
-class Documents(SingletonModel):
+class Documents(models.Model):
     rules = models.TextField(verbose_name="Правила")
     rules_document = models.FileField(upload_to="rules", verbose_name="Договор", blank=True, null=True)
     contract = models.TextField(verbose_name="Договор")
