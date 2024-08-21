@@ -15,7 +15,7 @@ class SingletonModel(models.Model):
 
 
 class WelcomePage(SingletonModel):
-    image = models.ImageField(upload_to="welcome", verbose_name="Изображение", blank=True, null=True)
+    image = models.FileField(upload_to="welcome", verbose_name="Изображение", blank=True, null=True)
     title = models.CharField(max_length=255, verbose_name="Заголовок", blank=True, null=True)
     description = models.TextField(verbose_name="Описание", blank=True, null=True)
     text_button = models.CharField(max_length=255, verbose_name="Текст кнопки", blank=True, null=True)
@@ -29,7 +29,7 @@ class WelcomePage(SingletonModel):
         verbose_name_plural = "Welcome Page"
 
 
-class Advantages(SingletonModel):
+class Advantages(models.Model):
     page = models.ForeignKey(WelcomePage, on_delete=models.CASCADE, verbose_name="Страница", blank=True, null=True,
                              related_name='advantages')
     icon = models.FileField(upload_to="advantages", verbose_name="Иконка", blank=True, null=True)
@@ -60,7 +60,7 @@ class MainPage(SingletonModel):
 class AboutPage(SingletonModel):
     title = models.CharField(max_length=255, verbose_name="О нас")
     text = models.TextField(verbose_name="О нас")
-    image = models.ImageField(upload_to="about", verbose_name="Изображение")
+    image = models.FileField(upload_to="about", verbose_name="Изображение")
     counter_1_title = models.CharField(max_length=255, verbose_name="Заголовок счетчика")
     counter_1_value = models.IntegerField(default=0, verbose_name="Значение счетчика")
     counter_2_title = models.CharField(max_length=255, verbose_name="Заголовок счетчика")
@@ -81,14 +81,14 @@ class AboutCard(SingletonModel):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='cards')
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     description = models.TextField(verbose_name="Описание")
-    image = models.ImageField(upload_to="about", verbose_name="Изображение")
+    image = models.FileField(upload_to="about", verbose_name="Изображение")
 
     class Meta:
         verbose_name = "Карточка о нас"
         verbose_name_plural = "Карточки о нас"
 
 
-class AboutFAQ(SingletonModel):
+class AboutFAQ(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='faqs')
     question = models.CharField(max_length=255, verbose_name="Вопрос")
     answer = models.TextField(verbose_name="Ответ")
@@ -98,9 +98,9 @@ class AboutFAQ(SingletonModel):
         verbose_name_plural = "Вопросы о нас"
 
 
-class AboutFAQImage(SingletonModel):
+class AboutFAQImage(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='faq_images')
-    image = models.ImageField(upload_to="about", verbose_name="Изображение")
+    image = models.FileField(upload_to="about", verbose_name="Изображение")
     link = models.CharField(max_length=255, verbose_name="Ссылка")
 
     class Meta:
@@ -108,9 +108,9 @@ class AboutFAQImage(SingletonModel):
         verbose_name_plural = "Изображения вопросов о нас"
 
 
-class AboutPartners(SingletonModel):
+class AboutPartners(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='partners')
-    image = models.ImageField(upload_to="about/partners", verbose_name="Изображение")
+    image = models.FileField(upload_to="about/partners", verbose_name="Изображение")
 
     class Meta:
         verbose_name = "Партнер"
@@ -119,13 +119,13 @@ class AboutPartners(SingletonModel):
 
 class AboutImages(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='images')
-    image = models.ImageField(upload_to="about-images", verbose_name="Изображение")
+    image = models.FileField(upload_to="about-images", verbose_name="Изображение")
 
 
-class AboutGallery(SingletonModel):
+class AboutGallery(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='gallery')
     name = models.CharField(max_length=255, verbose_name="Имя")
-    image = models.ImageField(upload_to="about/gallery", verbose_name="Изображение")
+    image = models.FileField(upload_to="about/gallery", verbose_name="Изображение")
 
     class Meta:
         verbose_name = "Изображение галереи"
