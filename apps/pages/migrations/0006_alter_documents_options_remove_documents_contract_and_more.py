@@ -15,18 +15,18 @@ class Migration(migrations.Migration):
             name='documents',
             options={'verbose_name': 'Документы', 'verbose_name_plural': 'Документы'},
         ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='contract_document',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='rules',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='rules_document',
-        ),
+        # migrations.RemoveField(
+        #     model_name='documents',
+        #     name='contract_document',
+        # ),
+        # migrations.RemoveField(
+        #     model_name='documents',
+        #     name='rules',
+        # ),
+        # migrations.RemoveField(
+        #     model_name='documents',
+        #     name='rules_document',
+        # ),
         migrations.CreateModel(
             name='Document',
             fields=[
