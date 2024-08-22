@@ -60,7 +60,7 @@ class MainPage(SingletonModel):
 class AboutPage(SingletonModel):
     title = models.CharField(max_length=255, verbose_name="О нас")
     text = models.TextField(verbose_name="О нас")
-    image = models.FileField(upload_to="about", verbose_name="Изображение")
+    image = models.FileField(upload_to="about", verbose_name="Изображение", blank=True, null=True)
     counter_1_title = models.CharField(max_length=255, verbose_name="Заголовок счетчика")
     counter_1_value = models.IntegerField(default=0, verbose_name="Значение счетчика")
     counter_2_title = models.CharField(max_length=255, verbose_name="Заголовок счетчика")
@@ -81,7 +81,7 @@ class AboutCard(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='cards')
     title = models.CharField(max_length=255, verbose_name="Заголовок")
     description = models.TextField(verbose_name="Описание")
-    image = models.FileField(upload_to="about", verbose_name="Изображение")
+    image = models.FileField(upload_to="about", verbose_name="Изображение", blank=True, null=True)
 
     class Meta:
         verbose_name = "Карточка о нас"
@@ -100,7 +100,7 @@ class AboutFAQ(models.Model):
 
 class AboutFAQImage(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='faq_images')
-    image = models.FileField(upload_to="about", verbose_name="Изображение")
+    image = models.FileField(upload_to="about", verbose_name="Изображение", blank=True, null=True)
     link = models.CharField(max_length=255, verbose_name="Ссылка")
 
     class Meta:
@@ -110,7 +110,7 @@ class AboutFAQImage(models.Model):
 
 class AboutPartners(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='partners')
-    image = models.FileField(upload_to="about/partners", verbose_name="Изображение")
+    image = models.FileField(upload_to="about/partners", verbose_name="Изображение", blank=True, null=True)
 
     class Meta:
         verbose_name = "Партнер"
@@ -118,14 +118,14 @@ class AboutPartners(models.Model):
 
 
 class AboutImages(models.Model):
-    page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='images')
-    image = models.FileField(upload_to="about-images", verbose_name="Изображение")
+    partner = models.ForeignKey(AboutPartners, on_delete=models.CASCADE, verbose_name="Партнер", blank=True, null=True)
+    image = models.FileField(upload_to="about-images", verbose_name="Изображение", blank=True, null=True)
 
 
 class AboutGallery(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='gallery')
     name = models.CharField(max_length=255, verbose_name="Имя")
-    image = models.FileField(upload_to="about/gallery", verbose_name="Изображение")
+    image = models.FileField(upload_to="about/gallery", verbose_name="Изображение", blank=True, null=True)
 
     class Meta:
         verbose_name = "Изображение галереи"
@@ -134,9 +134,11 @@ class AboutGallery(models.Model):
 
 class ContactInformation(SingletonModel):
     address = models.TextField(verbose_name="Адрес")
-    working_hours_weekdays = models.CharField(max_length=50, verbose_name="Часы работы в будни")
-    working_hours_weekend = models.CharField(max_length=50, verbose_name="Часы работы в выходные", blank=True,
-                                             null=True)
+    working_hours_weekdays = models.CharField(max_length=50, verbose_name="Часы работы")
+    working_hours_sticionar = models.CharField(max_length=50, verbose_name="Часы работы стационара", blank=True,
+                                               null=True)
+    working_hours_polyclinic = models.CharField(max_length=50, verbose_name="Часы работы поликлиники", blank=True,
+                                                null=True)
     email = models.EmailField(verbose_name="Электронная почта")
     iframe_map = models.TextField(verbose_name="Код карты", help_text="HTML iframe для встраивания карты")
 
@@ -189,15 +191,24 @@ class Email(models.Model):
         verbose_name_plural = "Электронные почты"
 
 
-class Documents(models.Model):
-    rules = models.TextField(verbose_name="Правила")
-    rules_document = models.FileField(upload_to="rules", verbose_name="Договор", blank=True, null=True)
-    contract = models.TextField(verbose_name="Договор")
-    contract_document = models.FileField(upload_to="rules", verbose_name="Договор", blank=True, null=True)
-
-    def __str__(self):
-        return self.rules
+class Documents(SingletonModel):
+    pass
 
     class Meta:
-        verbose_name = "Правила"
-        verbose_name_plural = "Правила"
+        verbose_name = "Документы"
+        verbose_name_plural = "Документы"
+
+
+class Document(models.Model):
+    document = models.ForeignKey(Documents, on_delete=models.CASCADE, verbose_name="Документ", related_name='documents')
+    name = models.CharField(max_length=255, verbose_name="Тип документа")
+    text = models.TextField(verbose_name="Текст", blank=True, null=True)
+    file = models.FileField(upload_to="documents", verbose_name="Файл", blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Документ"
+        verbose_name_plural = "Документ"
+
+    def __str__(self):
+        return self.name
+

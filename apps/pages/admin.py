@@ -5,7 +5,8 @@ from django.contrib import admin
 from django.contrib import admin
 import nested_admin
 from .models import (WelcomePage, Advantages, MainPage, AboutPage, AboutCard, AboutFAQ,
-                     AboutFAQImage, AboutPartners, AboutGallery, Email, SocialNetwork, PhoneNumber, ContactInformation)
+                     AboutFAQImage, AboutPartners, AboutGallery, Email, SocialNetwork, PhoneNumber, Documents, Document,
+                     ContactInformation)
 
 
 class AdvantagesInline(nested_admin.NestedTabularInline):
@@ -63,6 +64,16 @@ class EmailAdmin(admin.StackedInline):
 
 class ContactInformationAdmin(admin.ModelAdmin):
     inlines = [PhoneNumberAdmin, SocialNetworkAdmin, EmailAdmin]
+
+
+class DocumentAdmin(admin.StackedInline):
+    model = Document
+    extra = 0
+
+
+@admin.register(Documents)
+class DocumentsAdmin(admin.ModelAdmin):
+    inlines = [DocumentAdmin]
 
 
 admin.site.register(WelcomePage, WelcomePageAdmin)

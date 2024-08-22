@@ -1,8 +1,9 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.pages.models import WelcomePage, MainPage, AboutPage, ContactInformation
-from .serializers import WelcomePageSerializer, MainPageSerializer, AboutPageSerializer, ContactInformationSerializer
+from apps.pages.models import WelcomePage, MainPage, AboutPage, ContactInformation, Documents
+from .serializers import WelcomePageSerializer, MainPageSerializer, AboutPageSerializer, ContactInformationSerializer, \
+    DocumentsSerializer
 
 
 # Create your views here.
@@ -68,6 +69,15 @@ class AboutPageAPIView(APIView):
                 gallery_title='Галерея',
             )
         serializer = AboutPageSerializer(about_page, context={'request': request})
+        return Response(serializer.data)
+
+
+class DocumentsAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        documents = Documents.objects.first()
+        if not documents:
+            return Response({'error': 'Документы не найдены'}, status=404)
+        serializer = DocumentsSerializer(documents, context={'request': request})
         return Response(serializer.data)
 
 

@@ -26,17 +26,18 @@ class DoctorListSerializer(serializers.ModelSerializer):
 
     def get_position(self, obj):
         return obj.position.name
+
     def get_specialization(self, obj):
         return obj.specialization.name
 
     class Meta:
         model = Doctor
-        fields = ('id', 'name', 'position', 'specialization', 'seniority', 'photo', )
+        fields = ('id', 'name', 'position', 'specialization', 'seniority', 'photo',)
 
 
 class DoctorDetailSerializer(serializers.ModelSerializer):
-    position = serializers.StringRelatedField()
-    specialization = serializers.StringRelatedField()
+    position = serializers.SerializerMethodField()
+    specialization = serializers.SerializerMethodField()
     certificates = CertificateSerializer(many=True, read_only=True)
     reviews = ReviewSerializer(many=True, read_only=True)
     photos = PhotoSerializer(many=True, read_only=True)
@@ -44,3 +45,9 @@ class DoctorDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
         fields = ('name', 'position', 'specialization', 'seniority', 'description', 'certificates', 'reviews', 'photos')
+
+    def get_position(self, obj):
+        return obj.position.name
+
+    def get_specialization(self, obj):
+        return obj.specialization.name

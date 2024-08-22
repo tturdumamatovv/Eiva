@@ -7,6 +7,6 @@ urlpatterns = [
     path('contacts/', views.ContactInformationView.as_view(), name='contact-information'),
 
     path('about/', views.AboutPageAPIView.as_view(), name='about'),
-
+    path('documents/', views.DocumentsAPIView.as_view(), name='documents'),
 ]
 

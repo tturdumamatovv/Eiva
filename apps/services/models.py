@@ -7,6 +7,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название категории')
     title = models.CharField(max_length=100, blank=True, null=True, verbose_name='Заголовок')
+    icon = models.FileField(upload_to='categories', blank=True, null=True, verbose_name='Иконка')
     description = models.TextField(blank=True, null=True, verbose_name='Описание')
 
     def __str__(self):

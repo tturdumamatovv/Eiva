@@ -4,7 +4,7 @@ from apps.doctors.models import Doctor
 from apps.doctors.serializers import DoctorListSerializer
 from apps.pages.models import WelcomePage, Advantages, MainPage, AboutPage, ContactInformation, SocialNetwork, Email, \
     PhoneNumber, \
-    AboutCard, AboutFAQ, AboutFAQImage, AboutPartners, AboutGallery, AboutImages
+    AboutCard, AboutFAQ, AboutFAQImage, AboutPartners, AboutGallery, AboutImages, Documents, Document
 from apps.prices.models import Category as PriceCategory
 from apps.prices.serializers import CategorySerializer as PriceCategorySerializer
 
@@ -46,11 +46,11 @@ class MainPageSerializer(serializers.ModelSerializer):
 
     def get_our_services(self, obj):
         obj = PriceCategory.objects.all()
-        return PriceCategorySerializer(obj, many=True).data
+        return PriceCategorySerializer(obj, many=True, context={'request': self.context.get('request')}).data
 
     def get_our_specialists(self, obj):
         obj = Doctor.objects.all()
-        return DoctorListSerializer(obj, many=True).data
+        return DoctorListSerializer(obj, many=True, context={'request': self.context.get('request')}).data
 
 
 class AboutCardSerializer(serializers.ModelSerializer):
@@ -72,14 +72,22 @@ class AboutFAQImageSerializer(serializers.ModelSerializer):
 
 
 class AboutPartnersSerializer(serializers.ModelSerializer):
+    images = serializers.SerializerMethodField()
+
     class Meta:
         model = AboutPartners
         fields = '__all__'
+
+    def get_images(self, obj):
+        images = AboutImages.objects.all()
+        return AboutImagesSerializer(images, many=True, context={'request': self.context.get('request')}).data
+
 
 class AboutImagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = AboutImages
         fields = '__all__'
+
 
 class AboutGallerySerializer(serializers.ModelSerializer):
     class Meta:
@@ -92,7 +100,6 @@ class AboutPageSerializer(serializers.ModelSerializer):
     faqs = serializers.SerializerMethodField()
     faq_images = serializers.SerializerMethodField()
     partners = serializers.SerializerMethodField()
-    images = serializers.SerializerMethodField()
     gallery = serializers.SerializerMethodField()
 
     class Meta:
@@ -116,32 +123,36 @@ class AboutPageSerializer(serializers.ModelSerializer):
             'partners',
             'gallery_title',
             'gallery',
-            'images',
         ]
 
     def get_cards(self, obj):
+        request = self.context.get('request')
+
         cards = AboutCard.objects.all()
-        return AboutCardSerializer(cards, many=True).data
+        return AboutCardSerializer(cards, many=True, context={'request': request}).data
 
     def get_faqs(self, obj):
+        request = self.context.get('request')
+
         faqs = AboutFAQ.objects.all()
-        return AboutFAQSerializer(faqs, many=True).data
+        return AboutFAQSerializer(faqs, many=True, context={'request': request}).data
 
     def get_faq_images(self, obj):
+        request = self.context.get('request')
+
         faq_images = AboutFAQImage.objects.all()
-        return AboutFAQImageSerializer(faq_images, many=True).data
+        return AboutFAQImageSerializer(faq_images, many=True, context={'request': request}).data
 
     def get_partners(self, obj):
-        partners = AboutPartners.objects.all()
-        return AboutPartnersSerializer(partners, many=True).data
+        request = self.context.get('request')
 
-    def get_images(self, obj):
-        images = AboutImages.objects.all()
-        return AboutImagesSerializer(images, many=True).data
+        partners = AboutPartners.objects.all()
+        return AboutPartnersSerializer(partners, many=True, context={'request': request}).data
 
     def get_gallery(self, obj):
+        request = self.context.get('request')
         gallery = AboutGallery.objects.all()
-        return AboutGallerySerializer(gallery, many=True).data
+        return AboutGallerySerializer(gallery, many=True, context={'request': request}).data
 
 
 class PhoneNumberSerializer(serializers.ModelSerializer):
@@ -162,6 +173,23 @@ class SocialNetworkSerializer(serializers.ModelSerializer):
         fields = ['name', 'url', 'icon']
 
 
+class DocumentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Document
+        fields = ['name', 'text', 'file']
+
+class DocumentsSerializer(serializers.ModelSerializer):
+    document = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = Documents
+        fields = '__all__'
+    def get_document(self, obj):
+        request = self.context.get('request')
+        obj = Document.objects.all()
+        return DocumentSerializer(obj, many=True, context={'request': request} ).data
+
+
 class ContactInformationSerializer(serializers.ModelSerializer):
     phone_numbers = PhoneNumberSerializer(many=True, read_only=True)
     emails = EmailSerializer(many=True, read_only=True)
@@ -169,5 +197,4 @@ class ContactInformationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ContactInformation
-        fields = ['address', 'working_hours_weekdays', 'working_hours_weekend', 'email', 'iframe_map', 'phone_numbers',
-                  'emails', 'social_networks']
+        fields = '__all__'
