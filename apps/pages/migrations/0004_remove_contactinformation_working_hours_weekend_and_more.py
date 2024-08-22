@@ -10,10 +10,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='contactinformation',
-            name='working_hours_weekend',
-        ),
+
         migrations.AddField(
             model_name='contactinformation',
             name='working_hours_polyclinic',
