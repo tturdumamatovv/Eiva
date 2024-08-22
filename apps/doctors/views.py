@@ -14,7 +14,7 @@ class DoctorListView(APIView):
 
 class DoctorDetailView(RetrieveAPIView):
     queryset = Doctor.objects.all()
-    serializer_class = DoctorDetailSerializer()
+    serializer_class = DoctorDetailSerializer
     lookup_field = 'id'
 
     def get_serializer(self, *args, **kwargs):
