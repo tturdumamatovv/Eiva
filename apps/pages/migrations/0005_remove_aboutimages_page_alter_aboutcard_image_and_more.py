@@ -10,38 +10,38 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='aboutimages',
-            name='page',
-        ),
-        migrations.AlterField(
-            model_name='aboutcard',
-            name='image',
-            field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
-        ),
-        migrations.AlterField(
-            model_name='aboutfaqimage',
-            name='image',
-            field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
-        ),
-        migrations.AlterField(
-            model_name='aboutgallery',
-            name='image',
-            field=models.FileField(blank=True, null=True, upload_to='about/gallery', verbose_name='Изображение'),
-        ),
-        migrations.AlterField(
-            model_name='aboutimages',
-            name='image',
-            field=models.FileField(blank=True, null=True, upload_to='about-images', verbose_name='Изображение'),
-        ),
-        migrations.AlterField(
-            model_name='aboutpage',
-            name='image',
-            field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
-        ),
-        migrations.AlterField(
-            model_name='aboutpartners',
-            name='image',
-            field=models.FileField(blank=True, null=True, upload_to='about/partners', verbose_name='Изображение'),
-        ),
+        # migrations.RemoveField(
+        #     model_name='aboutimages',
+        #     name='page',
+        # ),
+        # migrations.AlterField(
+        #     model_name='aboutcard',
+        #     name='image',
+        #     field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
+        # ),
+        # migrations.AlterField(
+        #     model_name='aboutfaqimage',
+        #     name='image',
+        #     field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
+        # ),
+        # migrations.AlterField(
+        #     model_name='aboutgallery',
+        #     name='image',
+        #     field=models.FileField(blank=True, null=True, upload_to='about/gallery', verbose_name='Изображение'),
+        # ),
+        # migrations.AlterField(
+        #     model_name='aboutimages',
+        #     name='image',
+        #     field=models.FileField(blank=True, null=True, upload_to='about-images', verbose_name='Изображение'),
+        # ),
+        # migrations.AlterField(
+        #     model_name='aboutpage',
+        #     name='image',
+        #     field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
+        # ),
+        # migrations.AlterField(
+        #     model_name='aboutpartners',
+        #     name='image',
+        #     field=models.FileField(blank=True, null=True, upload_to='about/partners', verbose_name='Изображение'),
+        # ),
     ]
