@@ -11,10 +11,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='aboutimages',
-            name='page',
-        ),
+        # migrations.RemoveField(
+        #     model_name='aboutimages',
+        #     name='page',
+        # ),
         migrations.RemoveField(
             model_name='contactinformation',
             name='working_hours_weekend',
