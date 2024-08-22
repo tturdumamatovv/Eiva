@@ -45,6 +45,7 @@ class MainPage(SingletonModel):
     our_specialists_title = models.CharField(max_length=255, verbose_name="Наши специалисты")
     about_us_title = models.CharField(max_length=255, verbose_name="О нас")
     about_us_description = models.TextField(verbose_name="О нас")
+    about_us_image = models.FileField(upload_to="about", verbose_name="Изображение", blank=True, null=True)
     counter_title = models.CharField(max_length=255, verbose_name="Заголовок счетчика")
     counter_sub_title = models.CharField(max_length=255, verbose_name="Подзаголовок счетчика")
     birth_counter = models.IntegerField(default=0, verbose_name="Количество родившихся")
@@ -126,6 +127,7 @@ class AboutGallery(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='gallery')
     name = models.CharField(max_length=255, verbose_name="Имя")
     image = models.FileField(upload_to="about/gallery", verbose_name="Изображение", blank=True, null=True)
+    plaseholder = models.FileField(upload_to="about/gallery", verbose_name="Плейсхолдер", blank=True, null=True)
 
     class Meta:
         verbose_name = "Изображение галереи"
