@@ -17,10 +17,6 @@ class Migration(migrations.Migration):
         ),
         migrations.RemoveField(
             model_name='documents',
-            name='contract',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
             name='contract_document',
         ),
         migrations.RemoveField(
