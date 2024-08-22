@@ -11,14 +11,6 @@ class Migration(migrations.Migration):
 
     operations = [
 
-        migrations.AddField(
-            model_name='contactinformation',
-            name='working_hours_sticionar',
-            field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы стационара'),
-        ),
-        migrations.AlterField(
-            model_name='contactinformation',
-            name='working_hours_weekdays',
-            field=models.CharField(max_length=50, verbose_name='Часы работы'),
-        ),
+
+
     ]
