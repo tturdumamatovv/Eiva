@@ -13,11 +13,6 @@ class Migration(migrations.Migration):
 
         migrations.AddField(
             model_name='contactinformation',
-            name='working_hours_polyclinic',
-            field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы поликлиники'),
-        ),
-        migrations.AddField(
-            model_name='contactinformation',
             name='working_hours_sticionar',
             field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы стационара'),
         ),
