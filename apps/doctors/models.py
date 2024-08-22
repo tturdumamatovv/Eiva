@@ -47,8 +47,7 @@ class Сertificate(models.Model):
 
 class Review(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='reviews', verbose_name='Врач')
-    patient_name = models.CharField(max_length=255, verbose_name='Имя пациента')
-    text = models.TextField(verbose_name='Текст отзыва')
+    photo = models.FileField(upload_to='reviews', verbose_name='Фото', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Отзыв'

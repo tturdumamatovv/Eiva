@@ -50,41 +50,41 @@ class Migration(migrations.Migration):
         #     name='working_hours_sticionar',
         #     field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы стационара'),
         # ),
-        # migrations.AlterField(
-        #     model_name='aboutcard',
-        #     name='image',
-        #     field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
-        # ),
-        # migrations.AlterField(
-        #     model_name='aboutfaqimage',
-        #     name='image',
-        #     field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
-        # ),
-        # migrations.AlterField(
-        #     model_name='aboutgallery',
-        #     name='image',
-        #     field=models.FileField(blank=True, null=True, upload_to='about/gallery', verbose_name='Изображение'),
-        # ),
-        # migrations.AlterField(
-        #     model_name='aboutimages',
-        #     name='image',
-        #     field=models.FileField(blank=True, null=True, upload_to='about-images', verbose_name='Изображение'),
-        # ),
-        # migrations.AlterField(
-        #     model_name='aboutpage',
-        #     name='image',
-        #     field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
-        # ),
-        # migrations.AlterField(
-        #     model_name='aboutpartners',
-        #     name='image',
-        #     field=models.FileField(blank=True, null=True, upload_to='about/partners', verbose_name='Изображение'),
-        # ),
-        # migrations.AlterField(
-        #     model_name='contactinformation',
-        #     name='working_hours_weekdays',
-        #     field=models.CharField(max_length=50, verbose_name='Часы работы'),
-        # ),
+        migrations.AlterField(
+            model_name='aboutcard',
+            name='image',
+            field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
+        ),
+        migrations.AlterField(
+            model_name='aboutfaqimage',
+            name='image',
+            field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
+        ),
+        migrations.AlterField(
+            model_name='aboutgallery',
+            name='image',
+            field=models.FileField(blank=True, null=True, upload_to='about/gallery', verbose_name='Изображение'),
+        ),
+        migrations.AlterField(
+            model_name='aboutimages',
+            name='image',
+            field=models.FileField(blank=True, null=True, upload_to='about-images', verbose_name='Изображение'),
+        ),
+        migrations.AlterField(
+            model_name='aboutpage',
+            name='image',
+            field=models.FileField(blank=True, null=True, upload_to='about', verbose_name='Изображение'),
+        ),
+        migrations.AlterField(
+            model_name='aboutpartners',
+            name='image',
+            field=models.FileField(blank=True, null=True, upload_to='about/partners', verbose_name='Изображение'),
+        ),
+        migrations.AlterField(
+            model_name='contactinformation',
+            name='working_hours_weekdays',
+            field=models.CharField(max_length=50, verbose_name='Часы работы'),
+        )
         # migrations.CreateModel(
         #     name='Document',
         #     fields=[
