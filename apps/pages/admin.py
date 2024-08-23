@@ -80,7 +80,6 @@ class ContactInformationAdmin(ModelAdmin):
 class DocumentAdmin(StackedInline):
     model = Document
     extra = 0
-    tab = True
 
 
 @admin.register(Documents)
