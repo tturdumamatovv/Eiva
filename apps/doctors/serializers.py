@@ -5,19 +5,19 @@ from .models import Doctor, Position, Specialization, Сertificate, Review, Phot
 class CertificateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Сertificate
-        fields = ('name', 'file')
+        fields = ('name', 'image')
 
 
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
-        fields = ('photo',)
+        fields = ('image',)
 
 
 class PhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Photo
-        fields = ('file',)
+        fields = ('image',)
 
 
 class DoctorListSerializer(serializers.ModelSerializer):
@@ -32,7 +32,7 @@ class DoctorListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Doctor
-        fields = ('id', 'name', 'position', 'specialization', 'seniority', 'photo',)
+        fields = ('id', 'name', 'position', 'specialization', 'seniority', 'image',)
 
 
 class DoctorDetailSerializer(serializers.ModelSerializer):
