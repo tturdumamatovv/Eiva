@@ -89,7 +89,7 @@ CSRF_TRUSTED_ORIGINS = ['https://eiva.tatadev.pro', 'https://www.eiva.tatadev.pr
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CORS_URLS_REGEX = r"^/api/.*$"
+# CORS_URLS_REGEX = r"^/api/.*$"
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = "*"
 
