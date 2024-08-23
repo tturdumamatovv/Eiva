@@ -79,7 +79,7 @@ class ContactInformationAdmin(ModelAdmin):
 
 class DocumentAdmin(StackedInline):
     model = Document
-    extra = 0
+    extra = 1
 
 
 @admin.register(Documents)
