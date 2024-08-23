@@ -3,10 +3,16 @@ from .models import Service, Packages, Category, PackageService, PackageServiceT
 from apps.services.models import Type
 from apps.services.serializers import TypeSerializer
 
+
 class CategorySerializer(serializers.ModelSerializer):
+    services = serializers.SerializerMethodField()
+
     class Meta:
         model = Category
         fields = ['id', 'name']
+
+    def get_services(self, obj):
+        return ServiceSerializer(Service.objects.filter(category=obj), many=True).data
 
 
 class ServiceSerializer(serializers.ModelSerializer):
@@ -54,7 +60,7 @@ class PreiskurantSerializer(serializers.Serializer):
         return ServiceSerializer(Service.objects.all(), many=True).data
 
     def get_service_types(self, obj):
-        return TypeSerializer(Type.objects.all(), many=True).data
+        return CategorySerializer(Category.objects.all(), many=True).data
 
     class Meta:
         model = Packages
