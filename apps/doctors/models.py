@@ -67,3 +67,19 @@ class Photo(models.Model):
     class Meta:
         verbose_name = 'Фото'
         verbose_name_plural = 'Фото'
+
+
+class Order(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Имя', blank=True, null=True)
+    phone = models.CharField(max_length=255, verbose_name='Телефон', blank=True, null=True)
+    email = models.EmailField(verbose_name='Email', blank=True, null=True)
+    text = models.TextField(verbose_name='Сообщение', blank=True, null=True)
+    docktor = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name='Врач', blank=True, null=True)
+    packege = models.CharField(max_length=255, verbose_name='Пакет', blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.name} {self.phone}'
+
+    class Meta:
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'

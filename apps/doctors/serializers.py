@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Doctor, Position, Specialization, Сertificate, Review, Photo
+from .models import Doctor, Position, Specialization, Сertificate, Review, Photo, Order
 
 
 class CertificateSerializer(serializers.ModelSerializer):
@@ -51,3 +51,9 @@ class DoctorDetailSerializer(serializers.ModelSerializer):
 
     def get_specialization(self, obj):
         return obj.specialization.name
+
+
+class OrderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'

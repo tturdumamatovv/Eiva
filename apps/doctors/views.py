@@ -1,8 +1,11 @@
+from rest_framework import status
+from rest_framework.decorators import api_view
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Doctor
-from .serializers import DoctorListSerializer, DoctorDetailSerializer
+from .serializers import DoctorListSerializer, DoctorDetailSerializer, OrderSerializer
+from drf_spectacular.utils import extend_schema
 
 
 class DoctorListView(APIView):
@@ -24,3 +27,16 @@ class DoctorDetailView(RetrieveAPIView):
 
     def get_serializer_context(self):
         return {'request': self.request}
+
+
+
+class OrderCreateAPIView(APIView):
+    @extend_schema(request=OrderSerializer, responses=OrderSerializer)
+
+    def post(self, request, *args, **kwargs):
+
+        serializer = OrderSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
