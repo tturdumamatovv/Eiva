@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Position, Specialization, Doctor, Сertificate, Review, Photo
+from .models import Position, Specialization, Doctor, Сertificate, Review, Photo, Order
 from unfold.admin import ModelAdmin, TabularInline
 
 
@@ -35,6 +35,10 @@ class PositionAdmin(ModelAdmin):
 class SpecializationAdmin(ModelAdmin):
     pass
 
+
+@admin.register(Order)
+class OrderAdmin(ModelAdmin):
+    pass
 # admin.site.register(Сertificate)
 # admin.site.register(Review)
 # admin.site.register(Photo)
