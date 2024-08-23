@@ -44,7 +44,7 @@ class DoctorDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Doctor
-        fields = ('name', 'photo', 'position', 'specialization', 'seniority', 'description', 'certificates', 'reviews', 'photos')
+        fields = ('name', 'image', 'position', 'specialization', 'seniority', 'description', 'certificates', 'reviews', 'photos')
 
     def get_position(self, obj):
         return obj.position.name
