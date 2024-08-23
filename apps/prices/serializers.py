@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Service, Packages, Category, PackageService, PackageServiceType
-
+from apps.services.serializers import CategorySerializer
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,6 +41,7 @@ class PreiskurantSerializer(serializers.Serializer):
     packeges = serializers.SerializerMethodField()
     types = serializers.SerializerMethodField()
     services = serializers.SerializerMethodField()
+    service_types = serializers.SerializerMethodField()
 
     def get_packeges(self, obj):
         return PackageSerializer(Packages.objects.all(), many=True).data
@@ -50,6 +51,9 @@ class PreiskurantSerializer(serializers.Serializer):
 
     def get_services(self, obj):
         return ServiceSerializer(Service.objects.all(), many=True).data
+
+    def get_service_types(self, obj):
+        return CategorySerializer(Category.objects.all(), many=True).data
 
     class Meta:
         model = Packages
