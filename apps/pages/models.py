@@ -35,6 +35,9 @@ class Advantages(models.Model):
     icon = models.FileField(upload_to="advantages", verbose_name="Иконка", blank=True, null=True)
     text = models.CharField(max_length=255, verbose_name="Текст", blank=True, null=True)
 
+    def __str__(self):
+        return self.text[0:15]
+
     class Meta:
         verbose_name = "Преимущество"
         verbose_name_plural = "Преимущества"
@@ -73,6 +76,9 @@ class AboutPage(SingletonModel):
     partners_title = models.CharField(max_length=255, verbose_name="Заголовок партнеров")
     gallery_title = models.CharField(max_length=255, verbose_name="Заголовок галереи")
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = "О нас"
         verbose_name_plural = "О нас"
@@ -84,6 +90,9 @@ class AboutCard(models.Model):
     description = models.TextField(verbose_name="Описание")
     image = models.FileField(upload_to="about", verbose_name="Изображение", blank=True, null=True)
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = "Карточка о нас"
         verbose_name_plural = "Карточки о нас"
@@ -93,6 +102,9 @@ class AboutFAQ(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='faqs')
     question = models.CharField(max_length=255, verbose_name="Вопрос")
     answer = models.TextField(verbose_name="Ответ")
+
+    def __str__(self):
+        return self.question
 
     class Meta:
         verbose_name = "Вопрос о нас"
@@ -113,6 +125,9 @@ class AboutPartners(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='partners')
     image = models.FileField(upload_to="about/partners", verbose_name="Изображение", blank=True, null=True)
 
+    def __str__(self):
+        return 'Партнер {}'.format(self.id)
+
     class Meta:
         verbose_name = "Партнер"
         verbose_name_plural = "Партнеры"
@@ -122,12 +137,22 @@ class AboutImages(models.Model):
     partner = models.ForeignKey(AboutPartners, on_delete=models.CASCADE, verbose_name="Партнер", blank=True, null=True)
     image = models.FileField(upload_to="about-images", verbose_name="Изображение", blank=True, null=True)
 
+    def __str__(self):
+        return 'Изображение {}'.format(self.id)
+
+    class Meta:
+        verbose_name = "Изображение партнера"
+        verbose_name_plural = "Изображения партнеров"
+
 
 class AboutGallery(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, verbose_name="Страница", related_name='gallery')
     name = models.CharField(max_length=255, verbose_name="Имя")
     image = models.FileField(upload_to="about/gallery", verbose_name="Изображение", blank=True, null=True)
     plaseholder = models.FileField(upload_to="about/gallery", verbose_name="Плейсхолдер", blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = "Изображение галереи"
@@ -149,7 +174,7 @@ class ContactInformation(SingletonModel):
 
     class Meta:
         verbose_name = "Контактная информация"
-        verbose_name_plural = "Контактные информации"
+        verbose_name_plural = "Контактная информация"
 
 
 class PhoneNumber(models.Model):
@@ -196,6 +221,9 @@ class Email(models.Model):
 class Documents(SingletonModel):
     pass
 
+    def __str__(self):
+        return "Документы"
+
     class Meta:
         verbose_name = "Документы"
         verbose_name_plural = "Документы"
@@ -213,4 +241,3 @@ class Document(models.Model):
 
     def __str__(self):
         return self.name
-

@@ -10,8 +10,8 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+        verbose_name = 'Категория цен'
+        verbose_name_plural = 'Категории цен'
 
 
 class Service(models.Model):
@@ -23,8 +23,8 @@ class Service(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Услуга'
-        verbose_name_plural = 'Услуги'
+        verbose_name = 'Цена'
+        verbose_name_plural = 'Цены'
 
 
 class Packages(SingletonModel):

@@ -1,82 +1,93 @@
 from django.contrib import admin
+from unfold.admin import ModelAdmin, StackedInline
 
-# Register your models here.
-
-from django.contrib import admin
-import nested_admin
 from .models import (WelcomePage, Advantages, MainPage, AboutPage, AboutCard, AboutFAQ,
                      AboutFAQImage, AboutPartners, AboutGallery, Email, SocialNetwork, PhoneNumber, Documents, Document,
-                     ContactInformation)
+                     ContactInformation, AboutImages)
 
 
-class AdvantagesInline(nested_admin.NestedTabularInline):
+class AdvantagesInline(StackedInline):
     model = Advantages
     extra = 0
+    tab = True
 
 
-class WelcomePageAdmin(nested_admin.NestedModelAdmin):
+@admin.register(WelcomePage)
+class WelcomePageAdmin(ModelAdmin):
     inlines = [AdvantagesInline]
 
 
-class AboutCardInline(nested_admin.NestedTabularInline):
+class AboutCardInline(StackedInline):
     model = AboutCard
     extra = 0
+    tab = True
 
 
-class AboutFAQImageInline(nested_admin.NestedTabularInline):
+class AboutFAQImageInline(StackedInline):
     model = AboutFAQImage
     extra = 0
+    tab = True
 
 
-class AboutFAQInline(nested_admin.NestedTabularInline):
+class AboutFAQInline(StackedInline):
     model = AboutFAQ
     extra = 0
+    tab = True
 
 
-class AboutPartnersInline(nested_admin.NestedTabularInline):
-    model = AboutPartners
-    extra = 0
-
-
-class AboutGalleryInline(nested_admin.NestedTabularInline):
+class AboutGalleryInline(StackedInline):
     model = AboutGallery
     extra = 0
+    tab = True
 
 
-class AboutPageAdmin(nested_admin.NestedModelAdmin):
-    inlines = [AboutCardInline, AboutPartnersInline, AboutGalleryInline, AboutFAQInline, AboutFAQImageInline]
+@admin.register(AboutPage)
+class AboutPageAdmin(ModelAdmin):
+    inlines = [AboutCardInline, AboutGalleryInline, AboutFAQInline, AboutFAQImageInline]
 
 
-class PhoneNumberAdmin(admin.StackedInline):
+class AboutImagesInline(StackedInline):
+    model = AboutImages
+    extra = 0
+    tab = True
+
+
+@admin.register(AboutPartners)
+class AboutPartnersInline(ModelAdmin):
+    pass
+
+
+class PhoneNumberAdmin(StackedInline):
     model = PhoneNumber
     extra = 0
 
 
-class SocialNetworkAdmin(admin.StackedInline):
+class SocialNetworkAdmin(StackedInline):
     model = SocialNetwork
     extra = 0
 
 
-class EmailAdmin(admin.StackedInline):
+class EmailAdmin(StackedInline):
     model = Email
     extra = 0
 
 
-class ContactInformationAdmin(admin.ModelAdmin):
+@admin.register(ContactInformation)
+class ContactInformationAdmin(ModelAdmin):
     inlines = [PhoneNumberAdmin, SocialNetworkAdmin, EmailAdmin]
 
 
-class DocumentAdmin(admin.StackedInline):
+class DocumentAdmin(StackedInline):
     model = Document
     extra = 0
+    tab = True
 
 
 @admin.register(Documents)
-class DocumentsAdmin(admin.ModelAdmin):
+class DocumentsAdmin(ModelAdmin):
     inlines = [DocumentAdmin]
 
 
-admin.site.register(WelcomePage, WelcomePageAdmin)
-admin.site.register(MainPage)
-admin.site.register(AboutPage, AboutPageAdmin)
-admin.site.register(ContactInformation, ContactInformationAdmin)
+@admin.register(MainPage)
+class MainPageAdmin(ModelAdmin):
+    pass

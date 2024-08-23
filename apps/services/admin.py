@@ -1,27 +1,32 @@
 from django.contrib import admin
 from .models import Category, Type, Service, ServiceItem
+from unfold.admin import ModelAdmin, TabularInline
 
 
-class ServiceItemInline(admin.TabularInline):
+class ServiceItemInline(TabularInline):
     model = ServiceItem
-    extra = 0  # Указывает, сколько пустых форм для новых записей отображать по умолчанию
+    extra = 0
+    tab = True
 
 
-class ServiceAdmin(admin.ModelAdmin):
+
+@admin.register(Service)
+class ServiceAdmin(ModelAdmin):
     list_display = ['title', 'type']  # Поля, которые будут отображаться в списке объектов
     inlines = [ServiceItemInline]  # Добавление вложенных элементов услуги
 
 
-class TypeAdmin(admin.ModelAdmin):
+@admin.register(Type)
+class TypeAdmin(ModelAdmin):
     list_display = ['name', 'category', 'subtitle']
     # inlines = [ServiceAdmin]  # Так как ServiceAdmin не является inline, этот параметр недопустим здесь
 
 
-class CategoryAdmin(admin.ModelAdmin):
+@admin.register(Category)
+class CategoryAdmin(ModelAdmin):
     list_display = ['name', 'title', 'description']
 
 
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Type, TypeAdmin)
-admin.site.register(Service, ServiceAdmin)
-admin.site.register(ServiceItem)  # Если нужно управлять элементами независимо, можно зарегистрировать отдельно
+@admin.register(ServiceItem)
+class ServiceItemAdmin(ModelAdmin):
+    pass

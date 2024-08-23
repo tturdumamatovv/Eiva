@@ -1,26 +1,28 @@
 from django.contrib import admin
-from .models import Service, Category, Packages,PackageService
+from unfold.admin import ModelAdmin
+
+from .models import Service, Category, Packages, PackageService
 
 
-class CategoryAdmin(admin.ModelAdmin):
+@admin.register(Category)
+class CategoryAdmin(ModelAdmin):
     list_display = ['name', ]
     search_fields = ['name', ]
     list_filter = ['name']
 
 
-class ServiceAdmin(admin.ModelAdmin):
+@admin.register(Service)
+class ServiceAdmin(ModelAdmin):
     list_display = ['name', 'price', 'category']
     search_fields = ['name', 'description']
     list_filter = ['category', 'price']
 
 
-class PackageAdmin(admin.ModelAdmin):
+@admin.register(Packages)
+class PackageAdmin(ModelAdmin):
     pass
+
 
 @admin.register(PackageService)
-class PackageServiceAdmin(admin.ModelAdmin):
+class PackageServiceAdmin(ModelAdmin):
     pass
-
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Service, ServiceAdmin)
-admin.site.register(Packages, PackageAdmin)
