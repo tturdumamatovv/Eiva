@@ -34,7 +34,7 @@ class Packages(SingletonModel):
     document_medicine_standard = models.FileField(verbose_name='Документ медикаментов', blank=True, null=True)
 
     name_comfort = models.CharField(max_length=255, verbose_name='Название комфорт пакета', blank=True, null=True)
-    price_comfort = models.CharField (max_length=255, verbose_name='Цена комфорт', blank=True, null=True)
+    price_comfort = models.CharField(max_length=255, verbose_name='Цена комфорт', blank=True, null=True)
     document_package_comfort = models.FileField(verbose_name='Документ пакета', blank=True, null=True)
     document_massage_comfort = models.FileField(verbose_name='Документ медикаментов', blank=True, null=True)
 
@@ -58,3 +58,10 @@ class PackageService(models.Model):
     available_in_comfort = models.BooleanField(verbose_name='Доступна в комфорте', default=False, null=True)
     price_vip = models.CharField(max_length=255, verbose_name='Цена vip', blank=True, null=True)
     available_in_vip = models.BooleanField(verbose_name='Доступна в vip', default=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Услуга пакета'
+        verbose_name_plural = 'Услуги пакета'

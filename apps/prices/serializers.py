@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Service, Packages, Category
+from .models import Service, Packages, Category, PackageService
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -24,5 +24,5 @@ class PackageSerializer(serializers.ModelSerializer):
 class PackageServicesSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Service
+        model = PackageService
         fields = '__all__'
