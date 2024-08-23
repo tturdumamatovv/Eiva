@@ -36,12 +36,12 @@ class Packages(SingletonModel):
     name_comfort = models.CharField(max_length=255, verbose_name='Название комфорт пакета', blank=True, null=True)
     price_comfort = models.CharField(max_length=255, verbose_name='Цена комфорт', blank=True, null=True)
     document_package_comfort = models.FileField(verbose_name='Документ пакета', blank=True, null=True)
-    document_massage_comfort = models.FileField(verbose_name='Документ медикаментов', blank=True, null=True)
+    document_medicine_comfort = models.FileField(verbose_name='Документ медикаментов', blank=True, null=True)
 
     name_vip = models.CharField(max_length=255, verbose_name='Название VIP пакета', blank=True, null=True)
     price_vip = models.CharField(max_length=255, verbose_name='Цена VIP', blank=True, null=True)
     document_package_vip = models.FileField(verbose_name='Документ пакета', blank=True, null=True)
-    document_massage_vip = models.FileField(verbose_name='Документ медикаментов', blank=True, null=True)
+    document_medicine_vip = models.FileField(verbose_name='Документ медикаментов', blank=True, null=True)
 
     def __str__(self):
         return 'Пакеты'
