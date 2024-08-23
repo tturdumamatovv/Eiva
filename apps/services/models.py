@@ -42,7 +42,7 @@ class Type(models.Model):
 
 class Service(models.Model):
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
-    title = models.CharField(max_length=100, verbose_name='Название сервиса')
+    title = models.CharField(max_length=255, verbose_name='Название сервиса')
 
     def __str__(self):
         return self.title
