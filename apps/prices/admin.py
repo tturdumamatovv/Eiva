@@ -1,7 +1,7 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
 
-from .models import Service, Category, Packages, PackageService
+from .models import Service, Category, Packages, PackageService, PackageServiceType
 
 
 @admin.register(Category)
@@ -26,3 +26,8 @@ class PackageAdmin(ModelAdmin):
 @admin.register(PackageService)
 class PackageServiceAdmin(ModelAdmin):
     pass
+
+@admin.register(PackageServiceType)
+class PackageServiceTypeAdmin(ModelAdmin):
+    pass
+

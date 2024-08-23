@@ -1,7 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Service, Packages, Category, PackageService
-from .serializers import ServiceSerializer, PackageSerializer, CategorySerializer, PackageServicesSerializer
+from .models import Service, Packages, Category, PackageService, PackageServiceType
+from .serializers import ServiceSerializer, PackageSerializer, CategorySerializer, PackageServicesSerializer, \
+    PackageServicesTypeSerializer, PreiskurantSerializer
 
 
 class CategoryListView(APIView):
@@ -31,8 +32,16 @@ class PackageListView(APIView):
         return Response(serializer.data)
 
 
-class PackageServicesListView(APIView):
+class PackageServicesTypeListView(APIView):
     def get(self, obj):
-        package_service = PackageService.objects.all()
-        serializer = PackageServicesSerializer(package_service, many=True, context={'request': self.request})
+        package_service = PackageServiceType.objects.all()
+        serializer = PackageServicesTypeSerializer(package_service, many=True, context={'request': self.request})
         return Response(serializer.data)
+
+class PreiskurantAPIView(APIView):
+    def get(self, request, *args, **kwargs):
+        packeges = Packages.objects.all()
+        serializer = PreiskurantSerializer(packeges, many=True, context={'request': self.request})
+        return Response(serializer.data)
+
+

@@ -51,7 +51,13 @@ class Packages(SingletonModel):
         verbose_name_plural = 'Пакеты'
 
 
+class PackageServiceType(models.Model):
+    package = models.ForeignKey(Packages, on_delete=models.CASCADE, verbose_name='Пакет', blank=True, null=True, related_name='types')
+    name = models.CharField(max_length=255, verbose_name='Название', blank=True, null=True)
+
+
 class PackageService(models.Model):
+    type = models.ForeignKey(PackageServiceType, on_delete=models.CASCADE, verbose_name='Тип', blank=True, null=True, related_name='services')
     name = models.CharField(max_length=255, verbose_name='Название', blank=True, null=True)
     price = models.CharField(max_length=255, verbose_name='Цена', blank=True, null=True)
     price_comfort = models.CharField(max_length=255, verbose_name='Цена комфорт', blank=True, null=True)
