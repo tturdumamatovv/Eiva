@@ -9,7 +9,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ['id', 'name']
+        fields = ['id', 'name', 'services']
 
     def get_services(self, obj):
         return ServiceSerializer(Service.objects.filter(category=obj), many=True).data
