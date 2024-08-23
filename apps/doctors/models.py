@@ -23,7 +23,7 @@ class Doctor(models.Model):
                                  verbose_name='Должность')
     specialization = models.ForeignKey(Specialization, on_delete=models.SET_NULL, null=True, related_name='doctors',
                                        verbose_name='Спецификация')
-    photo = models.FileField(upload_to='doctors', verbose_name='Фото', blank=True, null=True)
+    image = models.FileField(upload_to='doctors', verbose_name='Фото', blank=True, null=True)
     seniority = models.CharField(max_length=255, verbose_name='Стаж')
     description = models.TextField(null=True, verbose_name='Описание')
 
@@ -35,7 +35,7 @@ class Doctor(models.Model):
 class Сertificate(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='certificates', verbose_name='Врач')
     name = models.CharField(max_length=255, verbose_name='Название сертификата')
-    file = models.FileField(upload_to='certificates', verbose_name='Файл сертификата')
+    image = models.FileField(upload_to='certificates', verbose_name='Файл сертификата')
 
     def __str__(self):
         return self.name
@@ -47,7 +47,7 @@ class Сertificate(models.Model):
 
 class Review(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='reviews', verbose_name='Врач')
-    photo = models.FileField(upload_to='reviews', verbose_name='Фото', blank=True, null=True)
+    image = models.FileField(upload_to='reviews', verbose_name='Фото', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Отзыв'
@@ -56,7 +56,7 @@ class Review(models.Model):
 
 class Photo(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='photos', verbose_name='Врач')
-    file = models.FileField(upload_to='photos', verbose_name='Файл фото')
+    image = models.FileField(upload_to='photos', verbose_name='Файл фото')
 
     class Meta:
         verbose_name = 'Фото'
