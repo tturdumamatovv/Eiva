@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Service, Packages, Category, PackageService, PackageServiceType
-from apps.services.serializers import CategorySerializer
+from apps.services.models import Type
+from apps.services.serializers import TypeSerializer
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -53,7 +54,7 @@ class PreiskurantSerializer(serializers.Serializer):
         return ServiceSerializer(Service.objects.all(), many=True).data
 
     def get_service_types(self, obj):
-        return CategorySerializer(Category.objects.all(), many=True).data
+        return TypeSerializer(Type.objects.all(), many=True).data
 
     class Meta:
         model = Packages
