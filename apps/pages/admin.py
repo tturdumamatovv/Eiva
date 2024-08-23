@@ -1,5 +1,8 @@
 from django.contrib import admin
+from django.db import models
 from unfold.admin import ModelAdmin, StackedInline
+from unfold.contrib.forms.widgets import WysiwygWidget
+
 
 from .models import (WelcomePage, Advantages, MainPage, AboutPage, AboutCard, AboutFAQ,
                      AboutFAQImage, AboutPartners, AboutGallery, Email, SocialNetwork, PhoneNumber, Documents, Document,
@@ -80,6 +83,11 @@ class ContactInformationAdmin(ModelAdmin):
 class DocumentAdmin(StackedInline):
     model = Document
     extra = 1
+    formfield_overrides = {
+        models.TextField: {
+            "widget": WysiwygWidget,
+        },
+    }
 
 
 @admin.register(Documents)
