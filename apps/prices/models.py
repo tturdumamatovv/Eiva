@@ -18,6 +18,7 @@ class Service(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', blank=True, null=True)
     name = models.CharField(max_length=255, verbose_name='Название услуги')
     price = models.CharField(max_length=255, verbose_name='Цена', blank=True, null=True)
+    tooltip = models.TextField(max_length=255, verbose_name='Подсказка', blank=True, null=True)
 
     def __str__(self):
         return self.name
