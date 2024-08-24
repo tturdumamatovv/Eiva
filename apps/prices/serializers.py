@@ -51,7 +51,8 @@ class PreiskurantSerializer(serializers.Serializer):
     service_types = serializers.SerializerMethodField()
 
     def get_packeges(self, obj):
-        return PackageSerializer(Packages.objects.all(), many=True).data
+        request = self.context.get('request')
+        return PackageSerializer(Packages.objects.all(), many=True, context={'request': request}).data
 
     def get_types(self, obj):
         return PackageServicesTypeSerializer(PackageServiceType.objects.all(), many=True).data

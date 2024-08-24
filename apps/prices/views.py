@@ -38,10 +38,9 @@ class PackageServicesTypeListView(APIView):
         serializer = PackageServicesTypeSerializer(package_service, many=True, context={'request': self.request})
         return Response(serializer.data)
 
+
 class PreiskurantAPIView(APIView):
     def get(self, request, *args, **kwargs):
         packeges = Packages.objects.all()
         serializer = PreiskurantSerializer(packeges, many=True, context={'request': self.request})
         return Response(serializer.data)
-
-
