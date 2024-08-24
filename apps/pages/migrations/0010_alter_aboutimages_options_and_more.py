@@ -19,22 +19,6 @@ class Migration(migrations.Migration):
             name='contactinformation',
             options={'verbose_name': 'Контактная информация', 'verbose_name_plural': 'Контактная информация'},
         ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='contract',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='contract_document',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='rules',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='rules_document',
-        ),
         migrations.AddField(
             model_name='aboutimages',
             name='partner',
