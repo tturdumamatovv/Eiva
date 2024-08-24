@@ -57,7 +57,7 @@ class AboutImagesInline(StackedInline):
 
 @admin.register(AboutPartners)
 class AboutPartnersInline(ModelAdmin):
-    pass
+    inlines = [AboutImagesInline]
 
 
 class PhoneNumberAdmin(StackedInline):
