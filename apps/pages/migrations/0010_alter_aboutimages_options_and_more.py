@@ -20,18 +20,4 @@ class Migration(migrations.Migration):
             options={'verbose_name': 'Контактная информация', 'verbose_name_plural': 'Контактная информация'},
         ),
 
-        migrations.CreateModel(
-            name='Document',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Тип документа')),
-                ('text', models.TextField(blank=True, null=True, verbose_name='Текст')),
-                ('file', models.FileField(blank=True, null=True, upload_to='documents', verbose_name='Файл')),
-                ('document', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='documents', to='pages.documents', verbose_name='Документ')),
-            ],
-            options={
-                'verbose_name': 'Документ',
-                'verbose_name_plural': 'Документ',
-            },
-        ),
     ]
