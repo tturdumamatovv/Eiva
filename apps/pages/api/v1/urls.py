@@ -8,5 +8,6 @@ urlpatterns = [
 
     path('about/', views.AboutPageAPIView.as_view(), name='about'),
     path('documents/', views.DocumentsAPIView.as_view(), name='documents'),
+    path('meta-data/', views.MetaDataAPIView.as_view(), name='meta-data'),
 ]
 

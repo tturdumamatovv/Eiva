@@ -241,3 +241,17 @@ class Document(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class MetaData(SingletonModel):
+    meta_title = models.CharField(max_length=255, verbose_name="Мета заголовок", blank=True, null=True)
+    meta_description = models.CharField(max_length=255, verbose_name="Мета описание", blank=True, null=True)
+    meta_image = models.FileField(upload_to="meta_images", verbose_name="Мета изображение", blank=True, null=True)
+    keywords = models.TextField(max_length=255, verbose_name="Ключевые слова", blank=True, null=True)
+
+    def __str__(self):
+        return "Метаданные"
+
+    class Meta:
+        verbose_name = "Метаданные"
+        verbose_name_plural = "Метаданные"

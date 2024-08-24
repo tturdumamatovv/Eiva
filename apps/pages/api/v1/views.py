@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.pages.models import WelcomePage, MainPage, AboutPage, ContactInformation, Documents
+from apps.pages.models import WelcomePage, MainPage, AboutPage, ContactInformation, Documents, MetaData
 from .serializers import WelcomePageSerializer, MainPageSerializer, AboutPageSerializer, ContactInformationSerializer, \
     DocumentsSerializer
 
@@ -88,3 +88,15 @@ class ContactInformationView(APIView):
             return Response({'error': 'Контактная информация не найдена'}, status=404)
         serializer = ContactInformationSerializer(contact_info, context={'request': request})
         return Response(serializer.data)
+
+
+class MetaDataAPIView(APIView):
+    def get(self, obj, *args, **kwargs):
+        metadata = MetaData.objects.first()
+        if not metadata:
+            return Response({'error': 'Метаданные не найдены'}, status=404)
+        return Response(
+            {'meta_title': metadata.meta_title, 'meta_description': metadata.meta_description,
+             'meta_image': self.request.build_absolute_uri(metadata.meta_image.url),
+             'keywords': metadata.keywords}, status=200
+        )

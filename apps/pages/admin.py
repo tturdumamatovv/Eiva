@@ -6,7 +6,7 @@ from unfold.contrib.forms.widgets import WysiwygWidget
 
 from .models import (WelcomePage, Advantages, MainPage, AboutPage, AboutCard, AboutFAQ,
                      AboutFAQImage, AboutPartners, AboutGallery, Email, SocialNetwork, PhoneNumber, Documents, Document,
-                     ContactInformation, AboutImages)
+                     ContactInformation, AboutImages, MetaData)
 
 
 class AdvantagesInline(StackedInline):
@@ -97,4 +97,9 @@ class DocumentsAdmin(ModelAdmin):
 
 @admin.register(MainPage)
 class MainPageAdmin(ModelAdmin):
+    pass
+
+
+@admin.register(MetaData)
+class MetaDataAdmin(ModelAdmin):
     pass
