@@ -20,16 +20,6 @@ class Migration(migrations.Migration):
             options={'verbose_name': 'Контактная информация', 'verbose_name_plural': 'Контактная информация'},
         ),
 
-        migrations.AddField(
-            model_name='contactinformation',
-            name='working_hours_polyclinic',
-            field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы поликлиники'),
-        ),
-        migrations.AddField(
-            model_name='contactinformation',
-            name='working_hours_sticionar',
-            field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы стационара'),
-        ),
         migrations.CreateModel(
             name='Document',
             fields=[
