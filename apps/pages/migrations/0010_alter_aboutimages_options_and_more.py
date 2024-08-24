@@ -19,11 +19,7 @@ class Migration(migrations.Migration):
             name='contactinformation',
             options={'verbose_name': 'Контактная информация', 'verbose_name_plural': 'Контактная информация'},
         ),
-        migrations.AddField(
-            model_name='aboutimages',
-            name='partner',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='pages.aboutpartners', verbose_name='Партнер'),
-        ),
+
         migrations.AddField(
             model_name='contactinformation',
             name='working_hours_polyclinic',
