@@ -20,10 +20,6 @@ class Migration(migrations.Migration):
             options={'verbose_name': 'Контактная информация', 'verbose_name_plural': 'Контактная информация'},
         ),
         migrations.RemoveField(
-            model_name='contactinformation',
-            name='working_hours_weekend',
-        ),
-        migrations.RemoveField(
             model_name='documents',
             name='contract',
         ),
