@@ -56,6 +56,13 @@ class PackageServiceType(models.Model):
     package = models.ForeignKey(Packages, on_delete=models.CASCADE, verbose_name='Пакет', blank=True, null=True, related_name='types')
     name = models.CharField(max_length=255, verbose_name='Название', blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Тип сервиса в пакете'
+        verbose_name_plural = 'Типы сервисов в пакете'
+
 
 class PackageService(models.Model):
     type = models.ForeignKey(PackageServiceType, on_delete=models.CASCADE, verbose_name='Тип', blank=True, null=True, related_name='services')
