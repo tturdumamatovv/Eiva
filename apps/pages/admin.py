@@ -51,7 +51,7 @@ class AboutPageAdmin(ModelAdmin):
 
 class AboutImagesInline(StackedInline):
     model = AboutImages
-    extra = 0
+    extra = 1
     tab = True
 
 
