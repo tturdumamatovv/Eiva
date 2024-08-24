@@ -44,6 +44,8 @@ class Packages(SingletonModel):
     document_package_vip = models.FileField(verbose_name='Документ пакета', blank=True, null=True)
     document_medicine_vip = models.FileField(verbose_name='Документ медикаментов', blank=True, null=True)
 
+    all_prices = models.FileField(verbose_name='Все цены', blank=True, null=True, upload_to='prices')
+
     def __str__(self):
         return 'Пакеты'
 
