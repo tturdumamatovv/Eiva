@@ -79,7 +79,7 @@ class AboutPartnersSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_images(self, obj):
-        images = AboutImages.objects.all()
+        images = AboutImages.objects.filter(partner=obj)
         return AboutImagesSerializer(images, many=True, context={'request': self.context.get('request')}).data
 
 

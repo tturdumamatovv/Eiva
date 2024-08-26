@@ -105,22 +105,16 @@ class AboutPageFAQSerializer(serializers.ModelSerializer):
 
 class AboutPageParentsSerializer(serializers.ModelSerializer):
     partners = serializers.SerializerMethodField()
-    images = serializers.SerializerMethodField()
 
     def get_partners(self, obj):
         partners = AboutPartners.objects.all()
         return AboutPartnersSerializer(partners, many=True, context={'request': self.context.get('request')}).data
-
-    def get_images(self, obj):
-        images = AboutImages.objects.all()
-        return AboutImagesSerializer(images, many=True, context={'request': self.context.get('request')}).data
 
     class Meta:
         model = AboutPage
         fields = [
             'partners_title',
             'partners',
-            'images',
         ]
 
 
