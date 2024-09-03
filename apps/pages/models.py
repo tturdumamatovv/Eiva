@@ -371,15 +371,32 @@ class MetaData(SingletonModel):
 
 
 class FormBackgroundImage(SingletonModel):
-    slug = models.CharField(
-        max_length=255, verbose_name="Страница", blank=True, null=True
+    main_background = models.FileField(
+        blank=True, null=True, verbose_name='Изображение заднего фона для "Главной страницы"'
     )
-    image = models.FileField(
-        upload_to="backgrounds/gallery",
-        verbose_name="Задний фон формы",
-        blank=True,
-        null=True,
+    about_background = models.FileField(
+        blank=True, null=True, verbose_name='Изображение заднего фона для "О нас"'
+
     )
+    directions_background = models.FileField(
+        blank=True, null=True, verbose_name='Изображение заднего фона для "Направления"'
+    )
+    doctors_background = models.FileField(
+        blank=True, null=True, verbose_name='Изображение заднего фона для "Врачи"'
+
+    )
+    prices_background = models.FileField(
+        blank=True, null=True, verbose_name='Изображение заднего фона для "Цены"'
+    )
+    docs_background = models.FileField(
+        blank=True, null=True, verbose_name='Изображение заднего фона для "Документы"'
+
+    )
+    contacts_background = models.FileField(
+        blank=True, null=True, verbose_name='Изображение заднего фона для "Контакты"'
+
+    )
+
 
     def __str__(self):
         return "Изображение заднего фона"

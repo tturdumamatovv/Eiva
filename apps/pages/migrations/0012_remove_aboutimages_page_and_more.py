@@ -11,57 +11,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='aboutimages',
-            name='page',
-        ),
-        migrations.RemoveField(
-            model_name='contactinformation',
-            name='working_hours_weekend',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='contract',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='contract_document',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='rules',
-        ),
-        migrations.RemoveField(
-            model_name='documents',
-            name='rules_document',
-        ),
-        migrations.AddField(
-            model_name='aboutimages',
-            name='partner',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='pages.aboutpartners', verbose_name='Партнер'),
-        ),
-        migrations.AddField(
-            model_name='contactinformation',
-            name='working_hours_polyclinic',
-            field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы поликлиники'),
-        ),
-        migrations.AddField(
-            model_name='contactinformation',
-            name='working_hours_sticionar',
-            field=models.CharField(blank=True, max_length=50, null=True, verbose_name='Часы работы стационара'),
-        ),
-        migrations.CreateModel(
-            name='Document',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Тип документа')),
-                ('text', models.TextField(blank=True, null=True, verbose_name='Текст')),
-                ('file', models.FileField(blank=True, null=True, upload_to='documents', verbose_name='Файл')),
-                ('document', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='documents', to='pages.documents', verbose_name='Документ')),
-            ],
-            options={
-                'verbose_name': 'Документ',
-                'verbose_name_plural': 'Документ',
-            },
-        ),
+
     ]
