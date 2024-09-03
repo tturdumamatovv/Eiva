@@ -11,33 +11,36 @@ from .serializers import (
     AboutPageFAQSerializer,
     AboutPageParentsSerializer,
     AboutPageGallerySerializer,
+    FormBackgroundImageSerializer,
 )
-from ...models import AboutPage, MainPage
+from ...models import AboutPage, FormBackgroundImage, MainPage
 
 
 class MainPageOurServicesAPIView(APIView):
     def get(self, obj):
-        serializer = MainPageOurServicesSerializer(context={'request': self.request})
+        serializer = MainPageOurServicesSerializer(context={"request": self.request})
         return Response(serializer.data)
 
 
 class MainPageOurSpecialistsAPIView(APIView):
     def get(self, obj):
-        serializer = MainPageOurSpecialistsSerializer(context={'request': self.request})
+        serializer = MainPageOurSpecialistsSerializer(context={"request": self.request})
         return Response(serializer.data)
 
 
 class MainPageAboutUsAPIView(APIView):
     def get(self, obj):
         obj = MainPage.objects.first()
-        serializer = MainPageAboutUsSerializer(obj, context={'request': self.request})
+        serializer = MainPageAboutUsSerializer(obj, context={"request": self.request})
         return Response(serializer.data)
 
 
 class MainPageBirthCounterAPIView(APIView):
     def get(self, obj):
         obj = MainPage.objects.first()
-        serializer = MainPageBirthCounterSerializer(obj, context={'request': self.request})
+        serializer = MainPageBirthCounterSerializer(
+            obj, context={"request": self.request}
+        )
         return Response(serializer.data)
 
 
@@ -49,36 +52,46 @@ class MainPageContactsAPIView(APIView):
 
 # ABUT PAGE
 
+
 class AboutPageAboutUsAPIView(APIView):
     def get(self, obj):
         obj = AboutPage.objects.first()
-        serilizer = AboutPageAboutUsSerializer(obj, context={'request': self.request})
+        serilizer = AboutPageAboutUsSerializer(obj, context={"request": self.request})
         return Response(serilizer.data)
 
 
 class AboutPageIncludeAPIView(APIView):
     def get(self, obj):
         obj = AboutPage.objects.first()
-        serilizer = AboutPageIncludeSerializer(obj, context={'request': self.request})
+        serilizer = AboutPageIncludeSerializer(obj, context={"request": self.request})
         return Response(serilizer.data)
 
 
 class AboutPageFAQAPIView(APIView):
     def get(self, obj):
         obj = AboutPage.objects.first()
-        serilizer = AboutPageFAQSerializer(obj, context={'request': self.request})
+        serilizer = AboutPageFAQSerializer(obj, context={"request": self.request})
         return Response(serilizer.data)
 
 
 class AboutPageParentsAPIView(APIView):
     def get(self, obj):
         obj = AboutPage.objects.first()
-        serilizer = AboutPageParentsSerializer(obj, context={'request': self.request})
+        serilizer = AboutPageParentsSerializer(obj, context={"request": self.request})
         return Response(serilizer.data)
 
 
 class AboutPageGalleryAPIView(APIView):
     def get(self, obj):
         obj = AboutPage.objects.first()
-        serilizer = AboutPageGallerySerializer(obj, context={'request': self.request})
+        serilizer = AboutPageGallerySerializer(obj, context={"request": self.request})
+        return Response(serilizer.data)
+
+
+class FormBackgroundImageAPIView(APIView):
+    def get(self, obj):
+        obj = FormBackgroundImage.objects.first()
+        serilizer = FormBackgroundImageSerializer(
+            obj, context={"request": self.request}
+        )
         return Response(serilizer.data)

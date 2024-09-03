@@ -4,9 +4,26 @@ from unfold.admin import ModelAdmin, StackedInline
 from unfold.contrib.forms.widgets import WysiwygWidget
 
 
-from .models import (WelcomePage, Advantages, MainPage, AboutPage, AboutCard, AboutFAQ,
-                     AboutFAQImage, AboutPartners, AboutGallery, Email, SocialNetwork, PhoneNumber, Documents, Document,
-                     ContactInformation, AboutImages, MetaData)
+from .models import (
+    FormBackgroundImage,
+    WelcomePage,
+    Advantages,
+    MainPage,
+    AboutPage,
+    AboutCard,
+    AboutFAQ,
+    AboutFAQImage,
+    AboutPartners,
+    AboutGallery,
+    Email,
+    SocialNetwork,
+    PhoneNumber,
+    Documents,
+    Document,
+    ContactInformation,
+    AboutImages,
+    MetaData,
+)
 
 
 class AdvantagesInline(StackedInline):
@@ -102,4 +119,9 @@ class MainPageAdmin(ModelAdmin):
 
 @admin.register(MetaData)
 class MetaDataAdmin(ModelAdmin):
+    pass
+
+
+@admin.register(FormBackgroundImage)
+class FormBackgroundImageAdmin(ModelAdmin):
     pass
