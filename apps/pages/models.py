@@ -87,6 +87,9 @@ class MainPage(SingletonModel):
         verbose_name = "Главная страница"
         verbose_name_plural = "Главные страница"
 
+    def __str__(self):
+        return "Главная страница"
+
 
 class AboutPage(SingletonModel):
     title = models.CharField(max_length=255, verbose_name="О нас")
