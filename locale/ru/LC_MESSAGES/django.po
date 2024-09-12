@@ -1,0 +1,1442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Projec-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-12 16:52+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Messages"
+msgstr "Сообщения"
+
+msgid "Site Maps"
+msgstr "Карты сайта"
+
+msgid "Static Files"
+msgstr "Статические файлы"
+
+msgid "Syndication"
+msgstr "Синдикация"
+
+msgid "…"
+msgstr "…"
+
+msgid "That page number is not an integer"
+msgstr "Номер страницы не является целым числом"
+
+msgid "That page number is less than 1"
+msgstr "Номер страницы меньше 1"
+
+msgid "That page contains no results"
+msgstr "На этой странице нет результатов"
+
+msgid "Enter a valid value."
+msgstr "Введите корректное значение."
+
+msgid "Enter a valid URL."
+msgstr "Введите корректный URL."
+
+msgid "Enter a valid integer."
+msgstr "Введите корректное целое число."
+
+msgid "Enter a valid email address."
+msgstr "Введите корректный адрес электронной почты."
+
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+"Введите корректный “slug”, состоящий из букв, цифр, подчёркиваний или дефисов."
+
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+"Введите корректный “slug”, состоящий из Unicode букв, цифр, подчёркиваний или дефисов."
+
+msgid "Enter a valid IPv4 address."
+msgstr "Введите корректный IPv4 адрес."
+
+msgid "Enter a valid IPv6 address."
+msgstr "Введите корректный IPv6 адрес."
+
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr "Введите корректный IPv4 или IPv6 адрес."
+
+msgid "Enter only digits separated by commas."
+msgstr "Введите только цифры, разделённые запятыми."
+
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr "Убедитесь, что это значение равно %(limit_value)s (сейчас %(show_value)s)."
+
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr "Убедитесь, что это значение меньше или равно %(limit_value)s."
+
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "Убедитесь, что это значение больше или равно %(limit_value)s."
+
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr "Убедитесь, что это значение кратно шагу размера %(limit_value)s."
+
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+"Убедитесь, что это значение кратно шагу размера %(limit_value)s, начиная с %(offset)s, например, %(offset)s, %(valid_value1)s, %(valid_value2)s и так далее."
+
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has %(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has %(show_value)d)."
+msgstr[0] "Убедитесь, что это значение имеет как минимум %(limit_value)d символ (сейчас %(show_value)d)."
+msgstr[1] "Убедитесь, что это значение имеет как минимум %(limit_value)d символов (сейчас %(show_value)d)."
+
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has %(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has %(show_value)d)."
+msgstr[0] "Убедитесь, что это значение имеет не более %(limit_value)d символа (сейчас %(show_value)d)."
+msgstr[1] "Убедитесь, что это значение имеет не более %(limit_value)d символов (сейчас %(show_value)d)."
+
+msgid "Enter a number."
+msgstr "Введите число."
+
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] "Убедитесь, что в общей сложности не более %(max)s цифры."
+msgstr[1] "Убедитесь, что в общей сложности не более %(max)s цифр."
+
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] "Убедитесь, что не более %(max)s знака после запятой."
+msgstr[1] "Убедитесь, что не более %(max)s знаков после запятой."
+
+msgid "Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural "Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] "Убедитесь, что перед запятой не более %(max)s цифры."
+msgstr[1] "Убедитесь, что перед запятой не более %(max)s цифр."
+
+msgid "File extension “%(extension)s” is not allowed. Allowed extensions are: %(allowed_extensions)s."
+msgstr "Расширение файла “%(extension)s” не допускается. Допустимые расширения: %(allowed_extensions)s."
+
+msgid "Null characters are not allowed."
+msgstr "Нулевые символы не допускаются."
+
+msgid "and"
+msgstr "и"
+
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr "%(model_name)s с этими %(field_labels)s уже существует."
+
+msgid "Constraint “%(name)s” is violated."
+msgstr "Ограничение “%(name)s” нарушено."
+
+msgid "Value %(value)r is not a valid choice."
+msgstr "Значение %(value)r не является допустимым выбором."
+
+msgid "This field cannot be null."
+msgstr "Это поле не может быть пустым."
+
+msgid "This field cannot be blank."
+msgstr "Это поле не может быть пустым."
+
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "%(model_name)s с этим %(field_label)s уже существует."
+
+msgid "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr "%(field_label)s должно быть уникальным для %(date_field_label)s %(lookup_type)s."
+
+msgid "Field of type: %(field_type)s"
+msgstr "Поле типа: %(field_type)s"
+
+msgid "“%(value)s” value must be either True or False."
+msgstr "Значение “%(value)s” должно быть либо Истина, либо Ложь."
+
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr "Значение “%(value)s” должно быть либо Истина, либо Ложь, либо Неопределено."
+
+msgid "Boolean (Either True or False)"
+msgstr "Булево (либо Истина, либо Ложь)"
+
+msgid "String (up to %(max_length)s)"
+msgstr "Строка (до %(max_length)s символов)"
+
+msgid "String (unlimited)"
+msgstr "Строка (неограниченная длина)"
+
+msgid "Comma-separated integers"
+msgstr "Целые числа, разделённые запятыми"
+
+msgid "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD format."
+msgstr "Значение “%(value)s” имеет неверный формат даты. Оно должно быть в формате ГГГГ-ММ-ДД."
+
+msgid "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid date."
+msgstr "Значение “%(value)s” имеет правильный формат (ГГГГ-ММ-ДД), но это недействительная дата."
+
+msgid "Date (without time)"
+msgstr "Дата (без времени)"
+
+msgid "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr "Значение “%(value)s” имеет неверный формат. Оно должно быть в формате ГГГГ-ММ-ДД ЧЧ:ММ[:сс[.мммммм]][ЧП]."
+
+msgid "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr "Значение “%(value)s” имеет правильный формат (ГГГГ-ММ-ДД ЧЧ:ММ[:сс[.мммммм]][ЧП]), но это недействительные дата/время."
+
+msgid "Date (with time)"
+msgstr "Дата (с временем)"
+
+msgid "“%(value)s” value must be a decimal number."
+msgstr "Значение “%(value)s” должно быть десятичным числом."
+
+msgid "Decimal number"
+msgstr "Десятичное число"
+
+msgid "“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[.uuuuuu] format."
+msgstr "Значение “%(value)s” имеет неверный формат. Оно должно быть в формате [ДД] [[ЧЧ:]ММ:]сс[.мммммм]."
+
+msgid "Duration"
+msgstr "Продолжительность"
+
+msgid "Email address"
+msgstr "Адрес электронной почты"
+
+msgid "File path"
+msgstr "Путь к файлу"
+
+msgid "“%(value)s” value must be a float."
+msgstr "Значение “%(value)s” должно быть числом с плавающей запятой."
+
+msgid "Floating point number"
+msgstr "Число с плавающей запятой"
+
+msgid "“%(value)s” value must be an integer."
+msgstr "Значение “%(value)s” должно быть целым числом."
+
+msgid "Integer"
+msgstr "Целое число"
+
+msgid "Big (8 byte) integer"
+msgstr "Большое (8-байтовое) целое число"
+
+msgid "Small integer"
+msgstr "Малое целое число"
+
+msgid "IPv4 address"
+msgstr "IPv4 адрес"
+
+msgid "IP address"
+msgstr "IP-адрес"
+
+msgid "“%(value)s” value must be either None, True or False."
+msgstr "Значение “%(value)s” должно быть либо Неопределено, либо Истина, либо Ложь."
+
+msgid "Boolean (Either True, False or None)"
+msgstr "Булево (либо Истина, либо Ложь, либо Неопределено)"
+
+msgid "Positive big integer"
+msgstr "Положительное большое целое число"
+
+msgid "Positive integer"
+msgstr "Положительное целое число"
+
+msgid "Positive small integer"
+msgstr "Положительное малое целое число"
+
+msgid "Slug (up to %(max_length)s)"
+msgstr "Слаг (до %(max_length)s символов)"
+
+msgid "Text"
+msgstr "Текст"
+
+msgid "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] format."
+msgstr "Значение “%(value)s” имеет неверный формат. Оно должно быть в формате ЧЧ:ММ[:сс[.мммммм]]."
+
+msgid "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an invalid time."
+msgstr "Значение “%(value)s” имеет правильный формат (ЧЧ:ММ[:сс[.мммммм]]), но это недействительное время."
+
+msgid "Time"
+msgstr "Время"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Raw binary data"
+msgstr "Сырые бинарные данные"
+
+msgid "“%(value)s” is not a valid UUID."
+msgstr "“%(value)s” не является корректным UUID."
+
+msgid "Universally unique identifier"
+msgstr "Универсальный уникальный идентификатор"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Image"
+msgstr "Изображение"
+
+msgid "A JSON object"
+msgstr "Объект JSON"
+
+msgid "Value must be valid JSON."
+msgstr "Значение должно быть корректным JSON."
+
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr "Экземпляр %(model)s с %(field)s %(value)r не существует."
+
+msgid "Foreign Key (type determined by related field)"
+msgstr "Внешний ключ (тип определяется связанным полем)"
+
+msgid "One-to-one relationship"
+msgstr "Одно-к-одному отношение"
+
+msgid "%(from)s-%(to)s relationship"
+msgstr "Отношение %(from)s-%(to)s"
+
+msgid "%(from)s-%(to)s relationships"
+msgstr "Отношения %(from)s-%(to)s"
+
+msgid "Many-to-many relationship"
+msgstr "Многие-ко-многим отношение"
+
+msgid ":?.!"
+msgstr ":?.!"
+
+msgid "This field is required."
+msgstr "Это поле обязательно к заполнению."
+
+msgid "Enter a whole number."
+msgstr "Введите целое число."
+
+msgid "Enter a valid date."
+msgstr "Введите корректную дату."
+
+msgid "Enter a valid time."
+msgstr "Введите корректное время."
+
+msgid "Enter a valid date/time."
+msgstr "Введите корректные дату/время."
+
+msgid "Enter a valid duration."
+msgstr "Введите корректную продолжительность."
+
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr "Количество дней должно быть между {min_days} и {max_days}."
+
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "Файл не был отправлен. Проверьте тип кодировки в форме."
+
+msgid "No file was submitted."
+msgstr "Файл не был отправлен."
+
+msgid "The submitted file is empty."
+msgstr "Отправленный файл пуст."
+
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] "Убедитесь, что имя файла имеет не более %(max)d символа (сейчас %(length)d)."
+msgstr[1] "Убедитесь, что имя файла имеет не более %(max)d символов (сейчас %(length)d)."
+
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr "Пожалуйста, отправьте файл или отметьте чекбокс, но не оба сразу."
+
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"Загрузите корректное изображение. Загруженный файл либо не является изображением, либо поврежден."
+
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "Выберите корректный вариант. %(value)s не является одним из доступных вариантов."
+
+msgid "Enter a list of values."
+msgstr "Введите список значений."
+
+msgid "Enter a complete value."
+msgstr "Введите полное значение."
+
+msgid "Enter a valid UUID."
+msgstr "Введите корректный UUID."
+
+msgid "Enter a valid JSON."
+msgstr "Введите корректный JSON."
+
+msgid ":"
+msgstr ":"
+
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr "(Скрытое поле %(name)s) %(error)s"
+
+msgid "ManagementForm data is missing or has been tampered with. Missing fields: %(field_names)s. You may need to file a bug report if the issue persists."
+msgstr "Данные ManagementForm отсутствуют или были изменены. Отсутствующие поля: %(field_names)s. Возможно, вам потребуется отправить отчёт об ошибке, если проблема не исчезнет."
+
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] "Пожалуйста, отправьте не более %(num)d формы."
+msgstr[1] "Пожалуйста, отправьте не более %(num)d форм."
+
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] "Пожалуйста, отправьте как минимум %(num)d форму."
+msgstr[1] "Пожалуйста, отправьте как минимум %(num)d форм."
+
+msgid "Order"
+msgstr "Заказ"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Пожалуйста, исправьте дублированные данные для поля %(field)s."
+
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr "Пожалуйста, исправьте дублированные данные для поля %(field)s, которое должно быть уникальным."
+
+msgid "Please correct the duplicate data for %(field_name)s which must be unique for the %(lookup)s in %(date_field)s."
+msgstr "Пожалуйста, исправьте дублированные данные для поля %(field_name)s, которое должно быть уникальным для %(lookup)s в %(date_field)s."
+
+msgid "Please correct the duplicate values below."
+msgstr "Пожалуйста, исправьте дублированные значения ниже."
+
+msgid "The inline value did not match the parent instance."
+msgstr "Встроенное значение не соответствует родительскому экземпляру."
+
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "Выберите допустимый вариант. Этот вариант не является одним из возможных."
+
+msgid "“%(pk)s” is not a valid value."
+msgstr "“%(pk)s” не является допустимым значением."
+
+msgid "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it may be ambiguous or it may not exist."
+msgstr "%(datetime)s не может быть интерпретировано в часовом поясе %(current_timezone)s; значение может быть неоднозначным или не существовать."
+
+msgid "Clear"
+msgstr "Очистить"
+
+msgid "Currently"
+msgstr "Текущее"
+
+msgid "Change"
+msgstr "Изменить"
+
+msgid "Unknown"
+msgstr "Неизвестно"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "yes,no,maybe"
+msgstr "да,нет,возможно"
+
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] "%(size)d байт"
+msgstr[1] "%(size)d байтов"
+
+msgid "%s KB"
+msgstr "%s КБ"
+
+msgid "%s MB"
+msgstr "%s МБ"
+
+msgid "%s GB"
+msgstr "%s ГБ"
+
+msgid "%s TB"
+msgstr "%s ТБ"
+
+msgid "%s PB"
+msgstr "%s ПБ"
+
+msgid "p.m."
+msgstr "п.м."
+
+msgid "a.m."
+msgstr "д.м."
+
+msgid "PM"
+msgstr "ПМ"
+
+msgid "AM"
+msgstr "АМ"
+
+msgid "midnight"
+msgstr "полночь"
+
+msgid "noon"
+msgstr "полдень"
+
+msgid "Monday"
+msgstr "понедельник"
+
+msgid "Tuesday"
+msgstr "вторник"
+
+msgid "Wednesday"
+msgstr "среда"
+
+msgid "Thursday"
+msgstr "четверг"
+
+msgid "Friday"
+msgstr "пятница"
+
+msgid "Saturday"
+msgstr "суббота"
+
+msgid "Sunday"
+msgstr "воскресенье"
+
+msgid "Mon"
+msgstr "Пн"
+
+msgid "Tue"
+msgstr "Вт"
+
+msgid "Wed"
+msgstr "Ср"
+
+msgid "Thu"
+msgstr "Чт"
+
+msgid "Fri"
+msgstr "Пт"
+
+msgid "Sat"
+msgstr "Сб"
+
+msgid "Sun"
+msgstr "Вс"
+
+msgid "January"
+msgstr "январь"
+
+msgid "February"
+msgstr "февраль"
+
+msgid "March"
+msgstr "март"
+
+msgid "April"
+msgstr "апрель"
+
+msgid "May"
+msgstr "май"
+
+msgid "June"
+msgstr "июнь"
+
+msgid "July"
+msgstr "июль"
+
+msgid "August"
+msgstr "август"
+
+msgid "September"
+msgstr "сентябрь"
+
+msgid "October"
+msgstr "октябрь"
+
+msgid "November"
+msgstr "ноябрь"
+
+msgid "December"
+msgstr "декабрь"
+
+msgid "jan"
+msgstr "янв"
+
+msgid "feb"
+msgstr "фев"
+
+msgid "mar"
+msgstr "мар"
+
+msgid "apr"
+msgstr "апр"
+
+msgid "may"
+msgstr "май"
+
+msgid "jun"
+msgstr "июн"
+
+msgid "jul"
+msgstr "июл"
+
+msgid "aug"
+msgstr "авг"
+
+msgid "sep"
+msgstr "сен"
+
+msgid "oct"
+msgstr "окт"
+
+msgid "nov"
+msgstr "ноя"
+
+msgid "dec"
+msgstr "дек"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Янв."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Фев."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Март"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "Апр."
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Май"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Июнь"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "Июль"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "Авг."
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "Сент."
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "Окт."
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "Ноя."
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "Дек."
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "Январь"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "Февраль"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "Март"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "Апрель"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "Май"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "Июнь"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "Июль"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "Август"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "Сентябрь"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "Октябрь"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Ноябрь"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "Декабрь"
+
+msgid "This is not a valid IPv6 address."
+msgstr "Это не действительный IPv6 адрес."
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr "%(truncated_text)s…"
+
+msgid "or"
+msgstr "или"
+
+msgid ", "
+msgstr ", "
+
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] "%(num)d год"
+msgstr[1] "%(num)d года"
+
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] "%(num)d месяц"
+msgstr[1] "%(num)d месяца"
+
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] "%(num)d неделя"
+msgstr[1] "%(num)d недели"
+
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] "%(num)d день"
+msgstr[1] "%(num)d дня"
+
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] "%(num)d час"
+msgstr[1] "%(num)d часа"
+
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] "%(num)d минута"
+msgstr[1] "%(num)d минуты"
+
+msgid "Forbidden"
+msgstr "Запрещено"
+
+msgid "CSRF verification failed. Request aborted."
+msgstr "Проверка CSRF не удалась. Запрос отменён."
+
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+"Вы видите это сообщение, потому что этот сайт HTTPS требует отправки заголовка “Referer” вашим веб-браузером, но он не был отправлен. Этот заголовок необходим по соображениям безопасности, чтобы гарантировать, что ваш браузер не подвергается вмешательству со стороны третьих лиц."
+
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+"Если вы настроили ваш браузер на отключение заголовков “Referer”, пожалуйста, включите их обратно, по крайней мере для этого сайта или для HTTPS-соединений, или для запросов с того же источника."
+
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" …> for links to third-party sites."
+msgstr ""
+"Если вы используете тег <meta name=\"referrer\" content=\"no-referrer\"> или включаете заголовок “Referrer-Policy: no-referrer”, пожалуйста, удалите их. Защита от CSRF требует строгой проверки заголовка “Referer”. Если вас беспокоит конфиденциальность, используйте альтернативы, такие как <a rel=\"noreferrer\" …> для ссылок на сторонние сайты."
+
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+"Вы видите это сообщение, потому что этот сайт требует CSRF-куки при отправке форм. Этот куки необходим по соображениям безопасности, чтобы гарантировать, что ваш браузер не подвергается вмешательству со стороны третьих лиц."
+
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+"Если вы настроили ваш браузер на отключение куки, пожалуйста, включите их обратно, по крайней мере для этого сайта или для запросов с того же источника."
+
+msgid "More information is available with DEBUG=True."
+msgstr "Больше информации доступно при DEBUG=True."
+
+msgid "No year specified"
+msgstr "Не указан год"
+
+msgid "Date out of range"
+msgstr "Дата вне допустимого диапазона"
+
+msgid "No month specified"
+msgstr "Не указан месяц"
+
+msgid "No day specified"
+msgstr "Не указан день"
+
+msgid "No week specified"
+msgstr "Не указана неделя"
+
+msgid "No %(verbose_name_plural)s available"
+msgstr "Нет доступных %(verbose_name_plural)s"
+
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+"Будущие %(verbose_name_plural)s недоступны, потому что %(class_name)s."
+"allow_future установлено в False."
+
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr "Неверная строка даты “%(datestr)s” для формата “%(format)s”"
+
+msgid "No %(verbose_name)s found matching the query"
+msgstr "Не найдено %(verbose_name)s, соответствующих запросу"
+
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr "Страница не является “последней” и не может быть преобразована в число."
+
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr "Недопустимая страница (%(page_number)s): %(message)s"
+
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr "Список пуст и “%(class_name)s.allow_empty” установлено в False."
+
+msgid "Directory indexes are not allowed here."
+msgstr "Индексы директорий здесь не разрешены."
+
+msgid "“%(path)s” does not exist"
+msgstr "“%(path)s” не существует"
+
+msgid "Index of %(directory)s"
+msgstr "Индекс %(directory)s"
+
+msgid "The install worked successfully! Congratulations!"
+msgstr "Установка прошла успешно! Поздравляем!"
+
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+"Смотреть <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">примечания к выпуску</a> для Django %(version)s"
+
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+"Вы видите эту страницу, потому что в файле настроек установлено <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a>, и вы не настроили ни один URL."
+
+msgid "Django Documentation"
+msgstr "Документация Django"
+
+msgid "Topics, references, &amp; how-to’s"
+msgstr "Темы, ссылки и инструкции"
+
+msgid "Tutorial: A Polling App"
+msgstr "Учебник: Приложение для опросов"
+
+msgid "Get started with Django"
+msgstr "Начать работу с Django"
+
+msgid "Django Community"
+msgstr "Сообщество Django"
+
+msgid "Connect, get help, or contribute"
+msgstr "Связаться, получить помощь или внести свой вклад"
+
+msgid "No response body"
+msgstr "Отсутствует тело ответа"
+
+msgid "Unspecified response body"
+msgstr "Неуказанное тело ответа"
+
+msgid "Token-based authentication with required prefix \"%s\""
+msgstr "Аутентификация на основе токенов с обязательным префиксом \"%s\""
+
+msgid ""
+"\n"
+"    OpenApi3 schema for this API. Format can be selected via content "
+"negotiation.\n"
+"\n"
+"    - YAML: application/vnd.oai.openapi\n"
+"    - JSON: application/vnd.oai.openapi+json\n"
+"    "
+msgstr ""
+"\n"
+"    Схема OpenApi3 для этого API. Формат можно выбрать через согласование содержимого.\n"
+"\n"
+"    - YAML: application/vnd.oai.openapi\n"
+"    - JSON: application/vnd.oai.openapi+json\n"
+"    "
+
+msgid "Add another %(verbose_name)s"
+msgstr "Добавить ещё один %(verbose_name)s"
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "Move Item"
+msgstr "Переместить элемент"
+
+msgid "Delete Item"
+msgstr "Удалить элемент"
+
+msgid "Open All Items"
+msgstr "Открыть все элементы"
+
+msgid "Close All Items"
+msgstr "Закрыть все элементы"
+
+msgid "Add Item"
+msgstr "Добавить элемент"
+
+msgid "View on site"
+msgstr "Посмотреть на сайте"
+
+msgid "Add Another"
+msgstr "Добавить ещё один"
+
+msgid "View"
+msgstr "Просмотр"
+
+msgid "Delete?"
+msgstr "Удалить?"
+
+msgid "Select record"
+msgstr "Выбрать запись"
+
+msgid "Select value"
+msgstr "Выбрать значение"
+
+msgid "Select action"
+msgstr "Выбрать действие"
+
+msgid "All"
+msgstr "Все"
+
+msgid "By {}"
+msgstr "По {}"
+
+msgid "Value"
+msgstr "Значение"
+
+msgid "From"
+msgstr "От"
+
+msgid "To"
+msgstr "До"
+
+msgid "Date from"
+msgstr "Дата с"
+
+msgid "Date to"
+msgstr "Дата по"
+
+msgid "By %(filter_title)s"
+msgstr "По %(filter_title)s"
+
+msgid "Not enough data."
+msgstr "Недостаточно данных."
+
+msgid "Add new item"
+msgstr "Добавить новый элемент"
+
+msgid "Paragraph"
+msgstr "Параграф"
+
+msgid "Underlined"
+msgstr "Подчёркнутый"
+
+msgid "Bold"
+msgstr "Жирный"
+msgid "Italic"
+msgstr "Курсив"
+
+msgid "Strike"
+msgstr "Зачёркнутый"
+
+msgid "Link"
+msgstr "Ссылка"
+
+msgid "Heading"
+msgstr "Заголовок"
+
+msgid "Quote"
+msgstr "Цитата"
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Unordered list"
+msgstr "Маркированный список"
+
+msgid "Ordered list"
+msgstr "Нумерованный список"
+
+msgid "Indent increase"
+msgstr "Увеличить отступ"
+
+msgid "Indent decrease"
+msgstr "Уменьшить отступ"
+
+msgid "Undo"
+msgstr "Отменить"
+
+msgid "Redo"
+msgstr "Повторить"
+
+msgid "Enter an URL"
+msgstr "Введите URL"
+
+msgid "Unlink"
+msgstr "Удалить ссылку"
+
+msgid "Object permissions"
+msgstr "Права доступа к объектам"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Object"
+msgstr "Объект"
+
+msgid "Group"
+msgstr "Группа"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Group permissions"
+msgstr "Права доступа группы"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Manage group"
+msgstr "Управление группой"
+
+msgid "User permissions"
+msgstr "Права доступа пользователя"
+
+msgid "Manage user"
+msgstr "Управление пользователем"
+
+msgid "Export"
+msgstr "Экспорт"
+
+msgid "Import"
+msgstr "Импорт"
+
+msgid ""
+"\n"
+"                    Export %(len)s selected item.\n"
+"                "
+msgid_plural ""
+"\n"
+"                    Export %(len)s selected items.\n"
+"                "
+msgstr[0] "Экспортировать %(len)s выбранный элемент."
+msgstr[1] "Экспортировать %(len)s выбранных элемента."
+
+msgid "This exporter will export the following fields"
+msgstr "Этот экспортёр будет экспортировать следующие поля"
+
+msgid "Submit"
+msgstr "Отправить"
+
+msgid ""
+"Below is a preview of data to be imported. If you are satisfied with the "
+"results, click 'Confirm import'"
+msgstr ""
+"Ниже представлен предварительный просмотр данных для импорта. Если вы удовлетворены результатами, нажмите 'Подтвердить импорт'"
+
+msgid "Confirm import"
+msgstr "Подтвердить импорт"
+
+msgid "Line number"
+msgstr "Номер строки"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Skipped"
+msgstr "Пропущено"
+
+msgid "Update"
+msgstr "Обновить"
+
+msgid "Some rows failed to validate"
+msgstr "Некоторые строки не прошли проверку"
+
+msgid ""
+"Please correct these errors in your data where possible, then reupload it "
+"using the form above."
+msgstr ""
+"Пожалуйста, исправьте эти ошибки в ваших данных, где это возможно, затем загрузите их снова с помощью формы выше."
+
+msgid "Row"
+msgstr "Строка"
+
+msgid "Errors"
+msgstr "Ошибки"
+
+msgid "Non field specific"
+msgstr "Не специфично для поля"
+
+msgid "This exporter will export the following fields: "
+msgstr "Этот экспортёр будет экспортировать следующие поля: "
+
+msgid "This importer will import the following fields: "
+msgstr "Этот импортёр будет импортировать следующие поля: "
+
+msgid "%(class_name)s %(instance)s"
+msgstr "%(class_name)s %(instance)s"
+
+msgid ""
+"Deleting %(class_name)s %(instance)s would require deleting the following "
+"protected related objects: %(related_objects)s"
+msgstr ""
+"Удаление %(class_name)s %(instance)s потребует удаления следующих защищенных связанных объектов: %(related_objects)s"
+
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr ""
+"Выберите дату из списка ниже, чтобы вернуться к предыдущей версии этого объекта."
+
+msgid "This object doesn't have a change history."
+msgstr "У этого объекта нет истории изменений."
+
+msgid "History"
+msgstr "История"
+
+msgid "Revert"
+msgstr "Вернуть"
+
+msgid ""
+"Press the 'Revert' button below to revert to this version of the object."
+msgstr ""
+"Нажмите кнопку 'Вернуть' ниже, чтобы вернуть эту версию объекта."
+
+msgid "Press the 'Change History' button below to edit the history."
+msgstr ""
+"Нажмите кнопку 'Изменить историю' ниже, чтобы редактировать историю."
+
+msgid "Date/time"
+msgstr "Дата/время"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Changed by"
+msgstr "Изменено"
+
+msgid "Change reason"
+msgstr "Причина изменения"
+
+msgid "Changes"
+msgstr "Изменения"
+
+msgid "None"
+msgstr "Нет"
+
+msgid "Change History"
+msgstr "История изменений"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Select action to run"
+msgstr "Выберите действие для выполнения"
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user’s "
+"password, but you can change the password using <a href=\"{}\" class=\"text-"
+"primary-600 dark:text-primary-500\">this form</a>."
+msgstr ""
+"Исходные пароли не сохраняются, поэтому невозможно увидеть пароль этого пользователя, но вы можете изменить пароль, используя <a href=\"{}\" class=\"text-primary-600 dark:text-primary-500\">эту форму</a>."
+
+msgid "Run the selected action"
+msgstr "Выполнить выбранное действие"
+
+msgid "Run"
+msgstr "Запустить"
+
+msgid "Click here to select the objects across all pages"
+msgstr "Кликните здесь, чтобы выбрать объекты на всех страницах"
+
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr "Выбрать все %(total_count)s %(module_name)s"
+
+msgid "Clear selection"
+msgstr "Очистить выбор"
+
+msgid "Django site admin"
+msgstr "Администрирование сайта Django"
+
+msgid "Django administration"
+msgstr "Администрирование Django"
+
+msgid "Models in the %(name)s application"
+msgstr "Модели в приложении %(name)s"
+
+msgid "You don’t have permission to view or edit anything."
+msgstr "У вас нет прав для просмотра или редактирования."
+
+msgid "First, enter a username and password. Then, you’ll be able to edit more user options."
+msgstr "Сначала введите имя пользователя и пароль. Затем вы сможете редактировать дополнительные параметры пользователя."
+
+msgid "Enter a username and password."
+msgstr "Введите имя пользователя и пароль."
+
+msgid "Change password"
+msgstr "Изменить пароль"
+
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr "Введите новый пароль для пользователя <strong>%(username)s</strong>."
+
+msgid "Add %(name)s"
+msgstr "Добавить %(name)s"
+
+msgid "Filters"
+msgstr "Фильтры"
+
+msgid "Select all rows"
+msgstr "Выбрать все строки"
+
+msgid "Toggle sorting"
+msgstr "Переключить сортировку"
+
+msgid "Remove from sorting"
+msgstr "Убрать из сортировки"
+
+msgid "Sorting priority: %(priority_number)s"
+msgstr "Приоритет сортировки: %(priority_number)s"
+
+msgid "Deleting the %(object_name)s '%(escaped_object)s' would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgstr "Удаление %(object_name)s '%(escaped_object)s' приведет к удалению связанных объектов, но ваш аккаунт не имеет прав на удаление следующих типов объектов:"
+
+msgid "Deleting the %(object_name)s '%(escaped_object)s' would require deleting the following protected related objects:"
+msgstr "Удаление %(object_name)s '%(escaped_object)s' потребует удаления следующих защищенных связанных объектов:"
+
+msgid "Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? All of the following related items will be deleted:"
+msgstr "Вы уверены, что хотите удалить %(object_name)s \"%(escaped_object)s\"? Все следующие связанные элементы будут удалены:"
+
+msgid "Objects"
+msgstr "Объекты"
+
+msgid "No, take me back"
+msgstr "Нет, вернуться назад"
+
+msgid "Yes, I’m sure"
+msgstr "Да, я уверен"
+
+msgid "Delete multiple objects"
+msgstr "Удалить несколько объектов"
+
+msgid "Deleting the selected %(objects_name)s would result in deleting related objects, but your account doesn't have permission to delete the following types of objects:"
+msgstr "Удаление выбранных %(objects_name)s приведет к удалению связанных объектов, но ваш аккаунт не имеет прав на удаление следующих типов объектов:"
+
+msgid "Deleting the selected %(objects_name)s would require deleting the following protected related objects:"
+msgstr "Удаление выбранных %(objects_name)s потребует удаления следующих защищенных связанных объектов:"
+
+msgid "Are you sure you want to delete the selected %(objects_name)s? All of the following objects and their related items will be deleted:"
+msgstr "Вы уверены, что хотите удалить выбранные %(objects_name)s? Все следующие объекты и их связанные элементы будут удалены:"
+
+msgid "No records found."
+msgstr "Записи не найдены."
+
+msgid " By %(filter_title)s "
+msgstr " По %(filter_title)s "
+
+msgid "Summary"
+msgstr "Сводка"
+
+msgid "Welcome back to"
+msgstr "Добро пожаловать обратно в"
+
+msgid "You are authenticated as %(username)s, but are not authorized to access this page. Would you like to login to a different account?"
+msgstr "Вы аутентифицированы как %(username)s, но не имеете права доступа к этой странице. Хотите войти под другим аккаунтом?"
+
+msgid "Log in"
+msgstr "Войти"
+
+msgid "Forgotten your password or username?"
+msgstr "Забыли пароль или имя пользователя?"
+
+msgid "Return to site"
+msgstr "Вернуться на сайт"
+
+msgid "Menu"
+msgstr "Меню"
+
+msgid "entry"
+msgid_plural "entries"
+msgstr[0] "запись"
+msgstr[1] "записи"
+
+msgid "This object doesn’t have a change history. It probably wasn’t added via this admin site."
+msgstr "У этого объекта нет истории изменений. Вероятно, он не был добавлен через этот административный сайт."
+
+msgid "Show all"
+msgstr "Показать все"
+
+msgid "Type to search"
+msgstr "Введите для поиска"
+
+msgid "Save and continue editing"
+msgstr "Сохранить и продолжить редактирование"
+
+msgid "Save and view"
+msgstr "Сохранить и просмотреть"
+
+msgid "Save and add another"
+msgstr "Сохранить и добавить другой"
+
+msgid "Save as new"
+msgstr "Сохранить как новый"
+
+msgid "You have been successfully logged out from the administration"
+msgstr "Вы успешно вышли из администрирования"
+
+msgid "Thanks for spending some quality time with the web site today."
+msgstr "Спасибо за время, проведенное сегодня на сайте."
+
+msgid "Log in again"
+msgstr "Войти снова"
+
+msgid "Your password was changed."
+msgstr "Ваш пароль был изменен."
+
+msgid "Please enter your old password, for security’s sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Пожалуйста, введите ваш старый пароль для безопасности, а затем введите ваш новый пароль дважды, чтобы мы могли проверить, что вы ввели его правильно."
+
+msgid "Filter results"
+msgstr "Фильтровать результаты"
+
+msgid "Clear all filters"
+msgstr "Очистить все фильтры"
+
+msgid "Apply Filters"
+msgstr "Применить фильтры"
+
+msgid "View site"
+msgstr "Просмотр сайта"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "More actions"
+msgstr "Больше действий"
+
+msgid "All applications"
+msgstr "Все приложения"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "True"
+msgstr "Истина"
+
+msgid "False"
+msgstr "Ложь"
+
+msgid "Record picture"
+msgstr "Изображение записи"
+
+msgid "Recent actions"
+msgstr "Последние действия"
+
+msgid "Unknown content"
+msgstr "Неизвестное содержимое"
+
+msgid "Please correct the error below."
+msgstr "Пожалуйста, исправьте ошибку ниже."
+
+msgid "Please correct the errors below."
+msgstr "Пожалуйста, исправьте ошибки ниже."
+
+msgid "Search apps and models..."
+msgstr "Поиск приложений и моделей..."
+
+msgid "Filter navigation items"
+msgstr "Фильтровать элементы навигации"
+
+msgid "General"
+msgstr "Общие"
+
+msgid "Dark"
+msgstr "Темная"
+
+msgid "Light"
+msgstr "Светлая"
+
+msgid "System"
+msgstr "Системная"
+
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] "%(counter)s результат"
+msgstr[1] "%(counter)s результатов"
+
+msgid "%(full_result_count)s total"
+msgstr "%(full_result_count)s всего"
+
+msgid "Welcome,"
+msgstr "Добро пожаловать,"
+
+msgid "Image preview"
+msgstr "Предпросмотр изображения"
+
+msgid "Choose file to upload"
+msgstr "Выберите файл для загрузки"
+
+msgid "Change selected %(model)s"
+msgstr "Изменить выбранную %(model)s"
+
+msgid "Add another %(model)s"
+msgstr "Добавить другую %(model)s"
+
+msgid "View selected %(model)s"
+msgstr "Просмотр выбранной %(model)s"
+
+msgid "Delete selected %(model)s"
+msgstr "Удалить выбранную %(model)s"
+
+msgid "Select all objects on this page for an action"
+msgstr "Выбрать все объекты на этой странице для действия"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Select currency"
+msgstr "Выбрать валют"

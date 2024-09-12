@@ -54,7 +54,7 @@ class MainPageOurSpecialistsSerializer(serializers.Serializer):
 class MainPageAboutUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = MainPage
-        fields = ["about_us_title", "about_us_description"]
+        fields = ["about_us_title", "about_us_description", 'about_us_image']
 
 
 class MainPageBirthCounterSerializer(serializers.ModelSerializer):
