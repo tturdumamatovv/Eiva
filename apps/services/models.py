@@ -55,7 +55,7 @@ class Service(models.Model):
 class ServiceItem(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     text = models.TextField(blank=True, null=True, verbose_name='Текст')
-    image = models.ImageField(upload_to='services', blank=True, null=True, verbose_name='Изображение')
+    image = models.FileField(upload_to='services', blank=True, null=True, verbose_name='Изображение')
     image_duration = models.CharField(choices=[('left', 'Слева'), ('right', 'Справа')], max_length=5, default='left', verbose_name='Расположение изображения')
 
     def __str__(self):
