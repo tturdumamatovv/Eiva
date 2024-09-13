@@ -86,10 +86,10 @@ class Packages(SingletonModel):
     all_prices = models.FileField(
         verbose_name="Все цены", blank=True, null=True, upload_to="prices"
     )
-    all_packeges = models.FileField(
+    all_packages = models.FileField(
         verbose_name="Все Пакеты", blank=True, null=True, upload_to="prices"
     )
-    acheges_for_pregnancy = models.FileField(
+    package_for_pregnancy = models.FileField(
         verbose_name="Документы для беременности", blank=True, null=True, upload_to="prices"
     )
 
