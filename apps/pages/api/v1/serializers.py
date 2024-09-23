@@ -36,6 +36,7 @@ class MainPageSerializer(serializers.ModelSerializer):
             'our_specialists',
             'about_us_title',
             'about_us_description',
+            'about_us_image',
             'counter_title',
             'counter_sub_title',
             'birth_counter',
