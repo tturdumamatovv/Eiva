@@ -42,7 +42,7 @@ class OrderCreateAPIView(APIView):
             phone = serializer.validated_data['phone']
             email = serializer.validated_data['email']
             text = serializer.validated_data['text']
-            docktor = serializer.validated_data['docktor'].name
+            docktor = serializer.validated_data['docktor'].name if serializer.validated_data['docktor'] else ''
             packege = serializer.validated_data['packege']
             message = f"Запись на прием\n\nИмя: {name}\nТелефон: {phone}\nEmail: {email}\nСообщение: {text}\nВрач: {docktor}\nПакет: {packege}"
             try:
