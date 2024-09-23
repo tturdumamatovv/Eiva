@@ -26,6 +26,7 @@ class WelcomePageSerializer(serializers.ModelSerializer):
 class MainPageSerializer(serializers.ModelSerializer):
     our_services = serializers.SerializerMethodField(read_only=True)
     our_specialists = serializers.SerializerMethodField(read_only=True)
+    about_us_photo = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = MainPage
@@ -36,7 +37,7 @@ class MainPageSerializer(serializers.ModelSerializer):
             'our_specialists',
             'about_us_title',
             'about_us_description',
-            'about_us_image',
+            'about_us_photo',
             'counter_title',
             'counter_sub_title',
             'birth_counter',
@@ -53,6 +54,11 @@ class MainPageSerializer(serializers.ModelSerializer):
         obj = Doctor.objects.all()
         return DoctorListSerializer(obj, many=True, context={'request': self.context.get('request')}).data
 
+    def get_about_us_photo(self, obj):
+        if obj.about_us_image:
+            request = self.context.get('request')
+            return request.build_absolute_uri(obj.about_us_image.url) if request else obj.about_us_image.url
+        return None
 
 class AboutCardSerializer(serializers.ModelSerializer):
     class Meta:
@@ -179,16 +185,18 @@ class DocumentSerializer(serializers.ModelSerializer):
         model = Document
         fields = ['name', 'text', 'file']
 
+
 class DocumentsSerializer(serializers.ModelSerializer):
     document = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Documents
         fields = '__all__'
+
     def get_document(self, obj):
         request = self.context.get('request')
         obj = Document.objects.all()
-        return DocumentSerializer(obj, many=True, context={'request': request} ).data
+        return DocumentSerializer(obj, many=True, context={'request': request}).data
 
 
 class ContactInformationSerializer(serializers.ModelSerializer):
