@@ -13,12 +13,14 @@ class ServiceItemInline(TabularInline):
 @admin.register(Service)
 class ServiceAdmin(ModelAdmin):
     list_display = ['title', 'type']  # Поля, которые будут отображаться в списке объектов
+    list_filter = ['type']
     inlines = [ServiceItemInline]  # Добавление вложенных элементов услуги
 
 
 @admin.register(Type)
 class TypeAdmin(ModelAdmin):
     list_display = ['name', 'category', 'subtitle']
+    list_filter = ['category']
     # inlines = [ServiceAdmin]  # Так как ServiceAdmin не является inline, этот параметр недопустим здесь
 
 
@@ -29,4 +31,5 @@ class CategoryAdmin(ModelAdmin):
 
 @admin.register(ServiceItem)
 class ServiceItemAdmin(ModelAdmin):
-    pass
+    list_display = ['text', 'service']
+    list_filter = ['service']

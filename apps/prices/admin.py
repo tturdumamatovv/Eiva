@@ -20,14 +20,26 @@ class ServiceAdmin(ModelAdmin):
 
 @admin.register(Packages)
 class PackageAdmin(ModelAdmin):
-    pass
+    list_display = ['name_standard', 'standard_is_active', 'comfort_is_active', 'vip_is_active']
+    list_filter = ['standard_is_active', 'comfort_is_active', 'vip_is_active']
 
 
 @admin.register(PackageService)
 class PackageServiceAdmin(ModelAdmin):
-    pass
+    list_display = [
+        'type',
+        'name',
+        'price',
+        'price_comfort',
+        'available_in_comfort',
+        'price_vip',
+        'available_in_vip',
+    ]
+    list_filter = ['type', 'available_in_comfort', 'available_in_vip',]
+
 
 @admin.register(PackageServiceType)
 class PackageServiceTypeAdmin(ModelAdmin):
-    pass
+    list_display = ['name', 'package',]
+    list_filter = ['package',]
 

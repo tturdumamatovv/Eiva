@@ -22,7 +22,7 @@ from .models import (
     Document,
     ContactInformation,
     AboutImages,
-    MetaData,
+    MetaData, SiteSettings,
 )
 
 
@@ -124,4 +124,9 @@ class MetaDataAdmin(ModelAdmin):
 
 @admin.register(FormBackgroundImage)
 class FormBackgroundImageAdmin(ModelAdmin):
+    pass
+
+
+@admin.register(SiteSettings)
+class SiteSettingsAdmin(ModelAdmin):
     pass

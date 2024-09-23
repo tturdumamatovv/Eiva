@@ -400,10 +400,26 @@ class FormBackgroundImage(SingletonModel):
 
     )
 
-
     def __str__(self):
         return "Изображение заднего фона"
 
     class Meta:
         verbose_name = "Изображение заднего фона"
         verbose_name_plural = "Изображения заднего фона"
+
+
+class SiteSettings(SingletonModel):
+    site_name = models.CharField(max_length=255, verbose_name="Название сайта")
+    site_description = models.TextField(verbose_name="Описание сайта")
+    site_logo = models.FileField(upload_to="site_logos", verbose_name="Логотип сайта", blank=True, null=True)
+    site_bottom_logo = models.FileField(upload_to="site_logos", verbose_name="Логотип нижней части сайта", blank=True, null=True)
+    site_favicon = models.FileField(upload_to="site_favicons", verbose_name="Иконка сайта", blank=True, null=True)
+    telegram_bot_id = models.CharField(max_length=255, verbose_name="ID бота Telegram", blank=True, null=True)
+    telegram_channels = models.TextField(verbose_name="Каналы Telegram", blank=True, null=True)
+
+    def __str__(self):
+        return self.site_name
+
+    class Meta:
+        verbose_name = "Настройки сайта"
+        verbose_name_plural = "Настройки сайта"
