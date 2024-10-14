@@ -58,9 +58,16 @@ class ServiceItem(models.Model):
     image = models.FileField(upload_to='services', blank=True, null=True, verbose_name='Изображение')
     image_duration = models.CharField(choices=[('left', 'Слева'), ('right', 'Справа')], max_length=5, default='left', verbose_name='Расположение изображения')
 
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
     def __str__(self):
         return self.text
 
     class Meta:
-        verbose_name = 'Элемент сервиса'
-        verbose_name_plural = 'Элементы сервиса'
+        verbose_name = "Элемент сервиса"
+        verbose_name_plural = "Элементы сервиса"
+        ordering = ["my_order"]
