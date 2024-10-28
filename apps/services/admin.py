@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Category, Type, Service, ServiceItem
 from unfold.admin import ModelAdmin, TabularInline
+from adminsortable2.admin import SortableAdminMixin
 
 
 class ServiceItemInline(TabularInline):
@@ -30,6 +31,6 @@ class CategoryAdmin(ModelAdmin):
 
 
 @admin.register(ServiceItem)
-class ServiceItemAdmin(ModelAdmin):
+class ServiceItemAdmin(SortableAdminMixin, ModelAdmin):
     list_display = ['text', 'service']
     list_filter = ['service']

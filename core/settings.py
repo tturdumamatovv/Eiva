@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_spectacular',
     'nested_admin',
+    'adminsortable2',
 
     'apps.prices.apps.PricesConfig',
     'apps.doctors.apps.DoctorsConfig',
