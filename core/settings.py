@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'nested_admin',
     'adminsortable2',
+    "ckeditor",
 
     'apps.prices.apps.PricesConfig',
     'apps.doctors.apps.DoctorsConfig',

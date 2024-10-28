@@ -10,9 +10,8 @@ class ServiceItemInline(TabularInline):
     tab = True
 
 
-
 @admin.register(Service)
-class ServiceAdmin(ModelAdmin):
+class ServiceAdmin(SortableAdminMixin, ModelAdmin):
     list_display = ['title', 'type']  # Поля, которые будут отображаться в списке объектов
     list_filter = ['type']
     inlines = [ServiceItemInline]  # Добавление вложенных элементов услуги
@@ -26,7 +25,7 @@ class TypeAdmin(ModelAdmin):
 
 
 @admin.register(Category)
-class CategoryAdmin(ModelAdmin):
+class CategoryAdmin(SortableAdminMixin, ModelAdmin):
     list_display = ['name', 'title', 'description']
 
 

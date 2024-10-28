@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from rest_framework.exceptions import ValidationError
 
@@ -153,7 +154,7 @@ class AboutFAQ(models.Model):
         related_name="faqs",
     )
     question = models.CharField(max_length=255, verbose_name="Вопрос")
-    answer = models.TextField(verbose_name="Ответ")
+    answer = RichTextField(verbose_name="Ответ")
 
     def __str__(self):
         return self.question

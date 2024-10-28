@@ -1,3 +1,4 @@
+from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 from .models import Position, Specialization, Doctor, Сertificate, Review, Photo, Order
 from unfold.admin import ModelAdmin, TabularInline
@@ -20,7 +21,10 @@ class PhotoInline(TabularInline):
 
 
 @admin.register(Doctor)
-class DoctorAdmin(ModelAdmin):
+class DoctorAdmin(SortableAdminMixin, ModelAdmin):
+    # for docktor in Doctor.objects.all():
+    #     docktor.order = docktor.id
+    #     docktor.save()
     inlines = [CertificateInline, ReviewInline, PhotoInline]
     list_display = ('name', 'position', 'specialization', 'seniority')  # Какие поля показывать в списке
     search_fields = ('name',)  # Поля, по которым можно осуществлять поиск

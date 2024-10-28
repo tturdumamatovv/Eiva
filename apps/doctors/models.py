@@ -32,10 +32,12 @@ class Doctor(models.Model):
     image = models.FileField(upload_to='doctors', verbose_name='Фото', blank=True, null=True)
     seniority = models.CharField(max_length=255, verbose_name='Стаж')
     description = models.TextField(null=True, verbose_name='Описание')
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True, verbose_name='Порядок')
 
     class Meta:
         verbose_name = 'Врач'
         verbose_name_plural = 'Врачи'
+        ordering = ['order']
 
 
 class Сertificate(models.Model):
@@ -74,7 +76,7 @@ class Order(models.Model):
     phone = models.CharField(max_length=255, verbose_name='Телефон', blank=True, null=True)
     email = models.EmailField(verbose_name='Email', blank=True, null=True)
     text = models.TextField(verbose_name='Сообщение', blank=True, null=True)
-    docktor = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name='Врач', blank=True, null=True)
+    docktor = models.ForeignKey(Doctor, on_delete=models.CASCADE, verbose_name='Врач', blank=True, null=True, related_name='orders')
     packege = models.CharField(max_length=255, verbose_name='Пакет', blank=True, null=True)
 
     def __str__(self):
