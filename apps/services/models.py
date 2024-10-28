@@ -1,4 +1,3 @@
-from ckeditor.fields import RichTextField
 from django.db import models
 from django.utils.text import slugify
 from unidecode import unidecode
@@ -73,6 +72,6 @@ class ServiceItem(models.Model):
         return self.text
 
     class Meta:
-        verbose_name = "Элемент сервиса"
-        verbose_name_plural = "Элементы сервиса"
+        verbose_name = 'Элемент сервиса'
+        verbose_name_plural = 'Элементы сервиса'
         ordering = ["my_order"]
