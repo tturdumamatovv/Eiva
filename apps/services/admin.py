@@ -18,7 +18,7 @@ class ServiceAdmin(SortableAdminMixin, ModelAdmin):
 
 
 @admin.register(Type)
-class TypeAdmin(ModelAdmin):
+class TypeAdmin(SortableAdminMixin, ModelAdmin):
     list_display = ['name', 'category', 'subtitle']
     list_filter = ['category']
     # inlines = [ServiceAdmin]  # Так как ServiceAdmin не является inline, этот параметр недопустим здесь

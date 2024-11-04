@@ -34,6 +34,7 @@ class Type(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название типа')
     title = models.CharField(max_length=100, blank=True, null=True, verbose_name='Заголовок')
     subtitle = models.CharField(max_length=100, blank=True, null=True, verbose_name='Подзаголовок')
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True, verbose_name='Порядок')
 
     def __str__(self):
         return self.name
@@ -41,6 +42,7 @@ class Type(models.Model):
     class Meta:
         verbose_name = 'Тип'
         verbose_name_plural = 'Типы'
+        ordering = ['order']
 
 
 class Service(models.Model):
